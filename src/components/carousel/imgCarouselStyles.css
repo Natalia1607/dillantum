@@ -1,0 +1,42 @@
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.carousel__item-r {
+    margin-top: 30px;
+}
+
+.carousel__img {
+    margin-bottom: 30px;
+}
+
+.carousel__img:focus-visible {
+  outline: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .carousel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slick-list {
+    height: auto!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel__img {
+    margin-bottom: 10px;
+  }
+
+  .carousel__img img {
+    width: 210px;
+  }
+}

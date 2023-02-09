@@ -1,0 +1,110 @@
+.main__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    grid-template-areas: 
+    "main__container_carousel h1"
+    "main__container_carousel cta-main";
+    height: 90vh;
+    overflow: hidden;
+}
+
+.main__container_carousel {
+    grid-area: main__container_carousel;
+    width: 100%;
+}
+
+.main__container h1 {
+    grid-area: h1;
+    margin-top: 178px;
+    font-family: var(--font-heading), serif;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 130%;
+    color: var(--color-heading);
+    text-transform: uppercase;
+}
+
+/* animation */
+.main__container h1 p {
+    transform: translateY(150%);
+    opacity: 0;
+    animation-name: showBottom;
+    animation-duration: 1.2s; 
+    animation-fill-mode: forwards;
+}
+
+.main__container h1 p:nth-child(2n) { 
+    animation-delay: .3s; 
+}
+
+.main__container h1 p:last-child {
+    animation-delay: .6s; 
+}
+
+@keyframes showBottom {
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* CTA */
+.cta-main {
+    width: max-content;
+    margin: auto;
+    grid-area: cta-main;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.cta-main .btn {
+    padding: 0.6rem 3rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .main__container {
+      grid-template-columns: 1fr 2fr;
+      justify-items: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main__container {
+        gap: 0px;
+    }
+
+    .main__container h1 {
+        font-size: 64px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main__container h1 {
+        font-size: 56px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main__container {
+        display: block;
+    }
+
+    .main__container h1 {
+        margin-top: 130px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40vh;
+        width: max-content;
+        text-align: center;
+    }
+
+    .cta-main {
+        position: relative;
+    }
+}
+  

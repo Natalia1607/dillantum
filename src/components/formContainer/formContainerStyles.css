@@ -1,0 +1,144 @@
+/* General styles */
+.form__container {
+    grid-template-columns: 0.9fr 1fr;
+    justify-items: center;
+    height: 91vh;
+    overflow: hidden;
+}
+
+.form__bg {
+    background: var(--color-white);
+    height: 100%;
+    width: 100%;
+}
+
+.form__bg  img {
+    width: 100%;
+}
+
+.form__right > p {
+    margin-bottom: 60px;
+    text-align: right;
+}
+
+.form__right h2 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 130%;
+    color: var(--color-text);
+}
+
+.sign__right {
+    margin-top: 20vh;
+}
+
+.sign__right .btn:hover {
+    color: var(--color-text);
+}
+
+.register__right {
+    margin-top: 10vh;
+}
+
+.form {
+    width: 410px;
+}
+
+#form__opacity {
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.form__data {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sign__data .input-wrap input[type='text'] {
+    width: 410px;
+}
+
+.input-wrap label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-text);
+}
+
+.input-wrap input {
+    width: 410px;
+    height: 40px;
+    margin-top: 6px;
+    padding: 0.8rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-bg-variant);
+    border-radius: 5px;
+}
+
+.input-wrap input[type='text'] {
+    width: 190px;
+}
+
+.register__link {
+    color: var(--color-heading);
+    font-weight: 500;
+}
+
+.register__link:hover {
+    transition: var(--transition);
+    text-decoration-line: underline;
+}
+
+
+/* checkbox */
+.checkbox {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox__input {
+    margin-top: 8px;
+}
+
+/* animation */
+.form__bg {
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    .form__container {
+        display: block;
+        background: linear-gradient(0deg, #e2dacb8f, #d3c1a252), url('../../assets/bg__mobile.jpg') center / cover no-repeat;
+    }
+
+    .form__bg.md-flex {
+        display: none;
+    }
+
+    .form {
+        margin: auto;
+    }
+
+    .form__right h2 {
+        text-align: center;
+    }
+
+    .sign__right .btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sign__right .btn.btn-primary.hover-diagonal_light {
+        margin-left: 0;
+    }
+}
