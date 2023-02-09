@@ -38,13 +38,13 @@ html,
 body {
     scroll-behavior: smooth;
 }
+
+main {
+    overflow: hidden; 
+}
  
 ::-webkit-scrollbar {
     display: none;
-}
-
-main {
-    min-height: 60vh;
 }
 
 /* =====General styles===== */
@@ -271,7 +271,8 @@ input {
         width: var(--container-width-sm);
     }
     
-    .content__container {
+    .content__container,
+    .form__container {
         padding: 0 15px;
     }
     

@@ -75,7 +75,8 @@ header {
 /* media */
 @media screen and (max-width: 430px) {
     header {
-        height: 130px;
+        height: max-content;
+        padding: 12px 0;
     }
 
     .container_column {
