@@ -11,10 +11,10 @@ import { initialState } from "./context/initialState";
 import reducer from "./context/reducer";
 
 ReactDOM.render(
-    <HashRouter basename="/">
+    <Router>
         <StateProvider initialState={initialState} reducer={reducer}>
             <App /> 
         </StateProvider>
-    </HashRouter>, 
+    </Router>, 
 document.getElementById('root')
 );

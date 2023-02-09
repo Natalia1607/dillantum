@@ -21,7 +21,7 @@ const Search = () => {
                 <label htmlFor="site-search">City</label><br />
                 <input type="search" name="city"/>
             </div>
-            <div className="input-wrap">
+            <div className="input-wrap sort">
                 <label>Sort by</label><br />
                 <select className="select-wrap">
                     <option value="Price (High to Low)">Price (High to Low)</option>

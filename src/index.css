@@ -31,6 +31,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background: var(--color-bg);
     color: var(--color-text);
+    height: 100vh;
 }
 
 html,
@@ -266,5 +267,17 @@ input {
     .container {
         width: var(--container-width-sm);
         padding: 0 15px;
+    }
+    
+    .md-flex {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .md-hidden { 
+        visibility: hidden;
+        display: none;
     }
 }

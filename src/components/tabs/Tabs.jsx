@@ -14,17 +14,25 @@ const Tabs = () => {
   };
   return (
     <>
-        <div className='tabs__container'>
-            <div className="block-tabs">
+        <div className='tabs__container'> 
+            <div className="block-tabs md-flex">
                 <Link to={'/rent/rent-daily'} className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>Short Term (Daily)</Link>
                 <Link to={'/rent/rent-monthly'} className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>Short Term (Monthly)</Link>
-                <Link to={'/rent/rent-yearly'} className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>Long Term (Yearly) </Link>
+                <Link to={'/rent/rent-yearly'} className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>Long Term (Yearly)</Link>
                 <Link to={'/rent/rent-commercial'} className={toggleState === 5 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(5)}>Commercial for Rent</Link>
             </div>
-
-            <Search />
+            <div className="block-tabs md-hidden">
+                <div className="input-wrap">
+                    <label>Rent Frequency</label><br />
+                    <select className="select-wrap">
+                        <option value="Short Term (Daily)">Short Term (Daily)</option>
+                        <option value="Short Term (Monthly)">Short Term (Monthly)</option>
+                        <option value="Long Term (Yearly)">Long Term (Yearly)</option>
+                        <option value="Commercial for Rent">Commercial for Rent</option>
+                    </select>
+                </div>
+            </div>
             <div className="content-tabs">
-                
                 <div className={toggleState === 2 ? "content  active-content" : "content"}>
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>

@@ -2,6 +2,7 @@
     position: relative;
     width: 348px;
     height: 493px;
+    background: var(--color-white);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
@@ -61,7 +62,21 @@
 }
 
 /* mobile */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+    .cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px 36px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .cards {
+        gap: 24px 12px;
+    }
+}
+
+@media screen and (max-width: 680px) {
     .cards {
         flex-direction: column;
         align-items: center;
@@ -70,5 +85,11 @@
 
     .card__wrapp {
         width: 440px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .card__wrapp {
+        width: 100%;
     }
 }

@@ -73,17 +73,17 @@ header {
 }
 
 /* media */
-
-@media screen and (max-width: 767px) {
-    .md-flex {
-        visibility: hidden;
-        display: none;
+@media screen and (max-width: 430px) {
+    header {
+        height: 130px;
     }
-}
 
-@media screen and (min-width: 768px) {
-    .md-hidden { 
-        visibility: hidden;
-        display: none;
+    .header__container.column {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .header__logotip {
+        margin-bottom: 12px;
     }
 }

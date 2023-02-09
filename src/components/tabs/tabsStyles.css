@@ -51,7 +51,27 @@
 
 /* mobile */
 @media screen and (max-width: 768px) {
+    .md-flex {
+        visibility: hidden;
+        display: none;
+    }
+
+    .tabs__container {
+        position: static;
+        height: auto;
+    }
+
     .tabs {
         width: max-content;
+    }
+
+    .block-tabs.md-hidden {
+        width: 80%;
+        margin: 24px auto;
+        margin-bottom: 0px;
+    }
+
+    .block-tabs.md-hidden .input-wrap {
+        width: 100%
     }
 }

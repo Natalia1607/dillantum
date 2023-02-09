@@ -5,7 +5,7 @@
     grid-template-areas: 
     "main__container_carousel h1"
     "main__container_carousel cta-main";
-    height: 90vh;
+    /* height: 90vh; */
     overflow: hidden;
 }
 
@@ -107,4 +107,11 @@
         position: relative;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .main__container h1 {
+        margin-bottom: 20vh;
+    }
+}
+
   

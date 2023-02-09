@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import CTA from './CTA';
 import './headerStyles.css';
 
 const Header = () => {
+  const location = useLocation(); 
   return (
     <header className='container'>
-      <div className="header__container flex ai-c jc-sb">
+      <div className=
+      {
+        location.pathname === '/' || location.pathname === '/register' || location.pathname === '/sign-in'
+        ? "header__container flex ai-c jc-sb column"
+        : "header__container flex ai-c jc-sb"
+      }
+      >
         <Link to={'/'} className='header__logotip flex'>
-          Dillantum.
+          Dillantum. 
           <small>Real Estate</small>
         </Link> 
         <CTA />

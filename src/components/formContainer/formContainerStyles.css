@@ -142,3 +142,19 @@
         margin-left: 0;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .form {
+        width: 100%;
+    }
+
+    .input-wrap {
+        width: 100%;
+    }
+
+    .input-wrap input[type='text'],
+    .input-wrap input
+    {
+        width: 100%;
+    }
+}

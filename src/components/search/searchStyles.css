@@ -28,13 +28,43 @@
 
 /* mobile */
 @media screen and (max-width: 768px) {
-    .filter {
-        flex-wrap: wrap;
-        width: 100%;
+    .filter__container {
+        width: 80%;
         margin: auto;
     }
 
+    .filter {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
     .filter .input-wrap {
-        width: 40%;
+        width: 45%;
+    }
+
+    .filter .input-wrap.sort {
+        width: 70%;
+    }
+
+    .filter .input-wrap input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .filter .input-wrap.sort {
+        width: 100%;
+    }
+
+    .filter .btn {
+        margin: auto;
+        padding: 0.7rem 8rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .filter .input-wrap {
+        width: 100%;
     }
 }
