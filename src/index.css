@@ -126,7 +126,7 @@ li {
     background: var(--color-bg);
     z-index: -1;
     transform-origin: 0% 0%;
-    transform: translateY(10%) translateX(10%) rotate(0deg);
+    transform: translateY(30%) translateX(10%) rotate(0deg);
     transition: var(--transition);
 }
 

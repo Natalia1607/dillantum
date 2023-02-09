@@ -12,6 +12,20 @@
     margin-bottom: 30px;
 }
 
+.carousel__item {
+  opacity: 0;
+  animation: fadeIn 5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
 .carousel__img:focus-visible {
   outline: none;
 }
