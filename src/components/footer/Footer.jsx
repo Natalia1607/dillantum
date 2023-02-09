@@ -14,7 +14,7 @@ const Footer = () => {
         <a href="#">Privacy Policy</a>
       </div>
       <div className="copyright">
-        Copyright © 2023 Dillantum.ae. All Rights Reserved
+        Copyright © 2023 Dillantum. All Rights Reserved
       </div>
     </footer>
   )

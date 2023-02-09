@@ -43,6 +43,10 @@ body {
     display: none;
 }
 
+main {
+    min-height: 60vh;
+}
+
 /* =====General styles===== */
 
 .container {
@@ -190,7 +194,6 @@ input {
 }
 
 /* paddings */
-
 .pt12 {
     padding-top: 12px;
 }
@@ -266,6 +269,9 @@ input {
 @media screen and (max-width: 768px) {
     .container {
         width: var(--container-width-sm);
+    }
+    
+    .content__container {
         padding: 0 15px;
     }
     

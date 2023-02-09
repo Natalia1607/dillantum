@@ -34,6 +34,7 @@ const Tabs = () => {
             </div>
             <div className="content-tabs">
                 <div className={toggleState === 2 ? "content  active-content" : "content"}>
+                    <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                         <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
@@ -45,6 +46,7 @@ const Tabs = () => {
                     <Footer />
                 </div>
                 <div className={toggleState === 3 ? "content  active-content" : "content"}>
+                    <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                         <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
@@ -56,6 +58,7 @@ const Tabs = () => {
                     <Footer />
                 </div>
                 <div className={toggleState === 4 ? "content  active-content" : "content"}>
+                    <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                         <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
@@ -67,6 +70,7 @@ const Tabs = () => {
                     <Footer />
                 </div>
                 <div className={toggleState === 5 ? "content  active-content" : "content"}>
+                    <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                         <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>

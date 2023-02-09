@@ -5,7 +5,7 @@
     grid-template-areas: 
     "main__container_carousel h1"
     "main__container_carousel cta-main";
-    /* height: 90vh; */
+    height:100vh;
     overflow: hidden;
 }
 

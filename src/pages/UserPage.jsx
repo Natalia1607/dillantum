@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Breadcrumb } from 'antd';
-import { Footer, Cards } from '../components';
+import { Cards, Footer } from '../components';
 
 import { GiArchiveResearch } from 'react-icons/gi';
 import { MdFavorite } from 'react-icons/md';
@@ -16,15 +16,26 @@ const UserPage = () => {
         <div className='banner'></div>
         <Breadcrumb separator=">" className='breadcrumb mt12 mb24'>
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/personal_account">Personal account</Breadcrumb.Item>
             <Breadcrumb.Item>
+            {
+              location.pathname === '/personal_account'
+              ? 
+              <>
+                Personal account
+              </> 
+              : 
+              <>
+              </>
+            }
             {
               location.pathname === '/personal_account/searches'
               ? 
               <>
                 Searches
               </> 
-              : <p className='none'></p>
+              : 
+              <>
+              </>
             }
             {
               location.pathname === '/personal_account/favorites'
@@ -32,7 +43,9 @@ const UserPage = () => {
               <>
                 Favorites
               </> 
-              : <p className='none'></p>
+              : 
+              <>
+              </>
             }
             {
               location.pathname === '/personal_account/ads'
@@ -40,9 +53,11 @@ const UserPage = () => {
               <>
                 Ads
               </> 
-              : <p className='none'></p>
+              : 
+              <>
+              </>
             }
-            </Breadcrumb.Item>
+            </Breadcrumb.Item> 
         </Breadcrumb>
         <div className='flex jc-sb mb24'>
           <div className="user__icons flex jc-c gap">
@@ -61,14 +76,13 @@ const UserPage = () => {
           </div>
           <a href='!#' className='btn btn-primary hover-diagonal_light'>Upload</a>
         </div>
-        {
-          location.pathname === '/personal_account/favorites'
-          ? 
-          <>
-
-          </> 
-          : <p className='none'></p>
-        }
+        <div className='container__cards flex gap jc-c'>
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+        </div>
         <Footer />
     </div>
   )

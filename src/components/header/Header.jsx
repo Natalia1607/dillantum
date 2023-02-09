@@ -10,7 +10,7 @@ const Header = () => {
       <div className=
       {
         location.pathname === '/' || location.pathname === '/register' || location.pathname === '/sign-in'
-        ? "header__container flex ai-c jc-sb column"
+        ? "header__container flex ai-c jc-sb container_column"
         : "header__container flex ai-c jc-sb"
       }
       >

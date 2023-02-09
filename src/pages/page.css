@@ -32,16 +32,17 @@
     font-weight: 500;
 }
 
-.cards-wrapp {
-    padding: 24px 12px;
-}
-
 .cards-wrapp > h3 {
     margin-bottom: 24px;
 }
 
 .none {
     display: none;
+}
+
+/* User page */
+.container__cards {
+    flex-wrap: wrap;
 }
 
 /* mobile */

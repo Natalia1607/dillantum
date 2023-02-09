@@ -78,7 +78,7 @@ header {
         height: 130px;
     }
 
-    .header__container.column {
+    .container_column {
         flex-direction: column;
         justify-content: space-evenly;
     }

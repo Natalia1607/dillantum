@@ -1,3 +1,4 @@
+import { Footer } from 'antd/es/layout/layout';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { FavouriteContainer, Header, MainContainer, RegisterContainer, SignInContainer } from './components';

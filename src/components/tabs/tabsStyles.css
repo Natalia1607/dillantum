@@ -1,10 +1,9 @@
 .tabs__container {
     position: relative;
     top: -46px;
-    height: 0;
 }
 
-.block-tabs {
+.block-tabs.md-flex {
     display: flex;
     justify-content: center;
 }
@@ -66,9 +65,7 @@
     }
 
     .block-tabs.md-hidden {
-        width: 80%;
-        margin: 24px auto;
-        margin-bottom: 0px;
+        width: 100%;
     }
 
     .block-tabs.md-hidden .input-wrap {
