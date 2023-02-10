@@ -5,7 +5,7 @@
     grid-template-areas: 
     "main__container_carousel h1"
     "main__container_carousel cta-main";
-    height:100vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -86,6 +86,7 @@
 @media screen and (max-width: 800px) {
     .main__container h1 {
         font-size: 56px;
+        text-align: left;
     }
 }
 
@@ -100,7 +101,6 @@
         margin-right: auto;
         margin-bottom: 40vh;
         width: max-content;
-        text-align: center;
     }
 
     .cta-main {

@@ -37,10 +37,15 @@ const CTA = () => {
   if(location.pathname === '/' || location.pathname === '/register' || location.pathname === '/sign-in') {
     return (  
       <>
+      {
+        authUser 
+        ? <Link to={'!#'} className='btn' onClick={userSignOut}>Sign out</Link>
+        : 
         <div className='cta flex jc-sb gap'>
           <Link to={'/sign-in'} className='btn'>Sign in</Link>
           <Link to={'/register'} className='btn'>Register</Link>
         </div>
+      }
       </>
     )
   };

@@ -73,6 +73,24 @@ header {
 }
 
 /* media */
+@media screen and (max-width: 1200px) {
+   .header__menu {
+    width: 80%;
+   } 
+}
+
+@media screen and (max-width: 980px) {
+   .header__menu {
+    width: 90%;
+   } 
+}
+
+@media screen and (max-width: 768px) {
+   .header__menu {
+    width: 100%;
+   } 
+}
+
 @media screen and (max-width: 430px) {
     header {
         height: max-content;

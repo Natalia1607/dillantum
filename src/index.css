@@ -73,7 +73,7 @@ li {
     background: transparent;
     color: var(--color-text);
     border: 2px solid var(--color-primary-variant);
-    /* border-radius: 0.4rem; */
+    border-radius: 0.4rem;
     cursor: pointer;
     transition: color 700ms ease-out;
 }

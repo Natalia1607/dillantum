@@ -2,7 +2,7 @@
 .form__container {
     grid-template-columns: 0.9fr 1fr;
     justify-items: center;
-    height: 91vh;
+    height: 100vh;
     overflow: hidden;
 }
 

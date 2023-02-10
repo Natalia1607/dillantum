@@ -43,7 +43,7 @@ const SignInContainer = () => {
     dispatch({
       type : actionType.SET_USER,
       user : providerData[0],
-    })
+    });
   };
 
   return (
@@ -64,6 +64,7 @@ const SignInContainer = () => {
                   <label>Email</label><br />
                   <input 
                     type="email" 
+                    autoFocus={true}
                     className='email' 
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)}

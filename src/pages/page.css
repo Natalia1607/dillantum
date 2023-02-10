@@ -45,6 +45,10 @@
     flex-wrap: wrap;
 }
 
+.btn_ad:hover {
+    color: var(--color-text);
+}
+
 /* mobile */
 @media screen and (max-width: 768px) {
     .page__container {

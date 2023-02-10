@@ -61,6 +61,11 @@
     font-size: 14px;
 }
 
+/* AddContainer */
+.form__ad-item {
+    display: none;
+}
+
 /* mobile */
 @media screen and (max-width: 1200px) {
     .cards {

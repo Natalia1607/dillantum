@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 import './formContainerStyles.css';
 import './mask.js';
@@ -10,7 +11,6 @@ import { auth } from '../../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const RegisterContainer = () => {
-  const [displayName, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const signUp = (e) => {
@@ -18,6 +18,7 @@ const RegisterContainer = () => {
     createUserWithEmailAndPassword(auth, email, password)
     .then((useCredential) => { 
       console.log(useCredential);
+      
     })
     .catch((error) => {
       console.log(error);
@@ -35,8 +36,7 @@ const RegisterContainer = () => {
                 <label>Name*</label><br />
                 <input 
                   type="text"
-                  value={displayName} 
-                  onChange={(e) => setName(e.target.value)}
+                  autoFocus={true}
                   required />
               </div>
               <div className="input-wrap">
