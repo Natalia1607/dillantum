@@ -61,22 +61,19 @@ const UserPage = () => {
               }
               </Breadcrumb.Item> 
           </Breadcrumb>
-          <div className='flex jc-sb mb24'>
-            <div className="user__icons flex jc-c gap">
-              <Link to={'/personal_account/searches'} className='flex column ai-c'>
-                <GiArchiveResearch className='icon' size={26}/>
-                <span>My Searches</span>
-              </Link>
-              <Link to={'/personal_account/favorites'} className='flex column ai-c'>
-                <MdFavorite className='icon' size={26}/>
-                <span>Favorites</span>
-              </Link>
-              <Link to={'/personal_account/ads'} className='flex column ai-c'>
-                <IoIosListBox className='icon' size={26}/>
-                <span>My Ads</span>
-              </Link>
-            </div>
-            <a href='!#' className='btn btn-primary hover-diagonal_light'>Upload</a>
+          <div className="user__icons flex jc-c gap mb24">
+            <Link to={'/personal_account/searches'} className='flex column ai-c'>
+              <GiArchiveResearch className='icon' size={26}/>
+              <span>My Searches</span>
+            </Link>
+            <Link to={'/personal_account/favorites'} className='flex column ai-c'>
+              <MdFavorite className='icon' size={26}/>
+              <span>Favorites</span>
+            </Link>
+            <Link to={'/personal_account/ads'} className='flex column ai-c'>
+              <IoIosListBox className='icon' size={26}/>
+              <span>My Ads</span>
+            </Link>
           </div>
           <div className='container__cards flex gap jc-c'>
             <Cards />
