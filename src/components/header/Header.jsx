@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import CTA from './CTA';
 import './headerStyles.css';
+import Logo  from '../../assets/logo.svg';
 
 const Header = () => {
   const location = useLocation(); 
@@ -15,7 +16,7 @@ const Header = () => {
       }
       >
         <Link to={'/'} className='header__logotip flex'>
-          Dillantum. 
+          <img src={Logo} alt="Logotip" />
           <small>Real Estate</small>
         </Link> 
         <CTA />

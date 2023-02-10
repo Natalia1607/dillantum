@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
 
 :root {
-    --color-bg: #FDF8EF;
-    --color-bg-variant: #F5EEE3;
+    --color-bg: rgb(251, 251, 243);
+    --color-bg-variant: rgb(245, 243, 235);
     --color-text: #1E1E1E;
-    --color-heading: #644930;
-    --color-primary: #C2AA82;
-    --color-primary-variant: #7C6145;
+    --color-heading: rgb(59, 44, 29);
+    --color-primary: rgb(208, 183, 152);
+    --color-primary-variant: rgb(59, 44, 29);
     --color-white: #FFFFFF;
 
     --font-main: 'Montserrat', sans-serif;
@@ -28,7 +28,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-main);
     background: var(--color-bg);
     color: var(--color-text);
     height: 100vh;
@@ -95,12 +95,12 @@ li {
     background: var(--color-primary-variant);
     z-index: -1;
     transform-origin: 0% 0%;
-    transform: translateY(10%) translateX(16%) rotate(-45deg);
+    transform: translateY(10%) translateX(15%) rotate(-45deg);
     transition: var(--transition);
 }
 
 .hover-diagonal:hover::after {
-    transform: translateY(10%) translateX(-25px) rotate(-45deg);
+    transform: translateY(10%) translateX(-20px) rotate(-45deg);
     transition: var(--transition);
 }
 
@@ -136,7 +136,7 @@ li {
 }
 
 .hover-diagonal_light:hover::after {
-    transform: translateY(10%) translateX(-25px) rotate(-45deg);
+    transform: translateY(15%) translateX(-25px) rotate(-45deg);
     transition: var(--transition);
 }
 
