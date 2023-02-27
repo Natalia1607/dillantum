@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Select, Space, } from 'antd';
 import { Link } from 'react-router-dom';
 import Cards from '../card/Card';
 import Search from '../search/Search';
 import Footer from '../footer/Footer';
 import './tabsStyles.css'; 
+
+const handleChange = (value) => {
+  console.log(`selected ${value}`);
+};
 
 const Tabs = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -14,7 +18,7 @@ const Tabs = () => {
   };
   return (
     <>
-        <div className='tabs__container'> 
+        <div className='tabs__container'>
             <div className="block-tabs md-flex">
                 <Link to={'/rent/rent-daily'} className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>Short Term (Daily)</Link>
                 <Link to={'/rent/rent-monthly'} className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>Short Term (Monthly)</Link>
@@ -22,15 +26,32 @@ const Tabs = () => {
                 <Link to={'/rent/rent-commercial'} className={toggleState === 5 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(5)}>Commercial for Rent</Link>
             </div>
             <div className="block-tabs md-hidden">
-                <div className="input-wrap">
-                    <label>Rent Frequency</label><br />
-                    <select className="select-wrap">
-                        <option value="Short Term (Daily)">Short Term (Daily)</option>
-                        <option value="Short Term (Monthly)">Short Term (Monthly)</option>
-                        <option value="Long Term (Yearly)">Long Term (Yearly)</option>
-                        <option value="Commercial for Rent">Commercial for Rent</option>
-                    </select>
-                </div>
+                <Space>
+                    {/* <label>Rent Frequency</label> */}
+                    <Select
+                        className="select-wrap"
+                        defaultValue="Short Term (Daily)"
+                        onChange={handleChange}
+                        options={[
+                            {
+                            value: 'Short Term (Daily)',
+                            label: 'Short Term (Daily)',
+                            },
+                            {
+                            value: 'Short Term (Monthly)',
+                            label: 'Short Term (Monthly)',
+                            },
+                            {
+                            value: 'Long Term (Yearly)',
+                            label: 'Long Term (Yearly)',
+                            },
+                            {
+                            value: 'Commercial for Rent',
+                            label: 'Commercial for Rent',
+                            },
+                        ]}
+                    />
+                </Space> 
             </div>
             <div className="content-tabs">
                 <div className={toggleState === 2 ? "content  active-content" : "content"}>

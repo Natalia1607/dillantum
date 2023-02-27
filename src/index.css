@@ -155,6 +155,10 @@ input {
     color: var(--color-heading)
 }
 
+.ant-breadcrumb li:last-child {
+    color: var(--color-text)
+}
+
 /* display type */
 .flex {
     display: flex;
