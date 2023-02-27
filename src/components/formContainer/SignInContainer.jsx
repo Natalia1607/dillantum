@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, Input } from 'antd';
 
 import Key from '../../assets/key.jpg';
 
@@ -25,7 +26,7 @@ const SignInContainer = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const signIn = (e) => {
-    e.preventDefault();
+    /* e.preventDefault(); */
     signInWithEmailAndPassword(auth, email, password)
     .then((useCredential) => { 
       console.log(useCredential);
@@ -58,29 +59,53 @@ const SignInContainer = () => {
         <button 
           className='btn flex ai-c gap_6 mb24' 
           style={button} onClick={appearance}><MdEmail color='#1976d2' size={22}/>Continue with Email</button>
-        <form action="#" className='form' id='form__opacity' onSubmit={signIn}>
-            <div className="form__data sign__data flex jc-sb gap mb36">
-                <div className="input-wrap">
-                  <label>Email</label><br />
-                  <input 
-                    type="email" 
-                    autoFocus={true}
-                    className='email' 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="input-wrap">
-                  <label>Password</label><br />
-                  <input 
-                    type="password" 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)} 
-                  />
-                </div>
-            </div>
-            <button className='btn btn-primary hover-diagonal_light' type='submit'>Sign in</button>
-        </form>
+        <Form 
+            action="#"
+            name="nest-messages" 
+            layout="vertical"
+            className='form'
+            id='form__opacity' 
+            /* onFinish={signIn} */
+          >
+            <Form.Item
+              name={['user', 'email']}
+              label="E-mail"
+              className='item__input' 
+              rules={[
+                {
+                  type: 'email',
+                  message: 'The input is not valid E-mail!',
+                },
+                {
+                  required: true,
+                  message: 'Please input your E-mail!',
+                },
+              ]}
+            >
+              <Input
+                autoFocus={true}
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Item>
+            <Form.Item
+              label="Password"
+              name="password"
+              className='item__input'
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your password!',
+                },
+              ]}
+              >
+              <Input.Password
+                value={password}
+                onChange={(e) => setPassword(e.target.value)} 
+              />
+            </Form.Item>
+            <button className='btn btn-primary hover-diagonal_light' type='submit' onClick={signIn}>Sign in</button>
+          </Form>
         </div>
     </div>
   )

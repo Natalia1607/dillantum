@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import {
-  Button,
-  Cascader,
-  Checkbox,
-  DatePicker,
   Form,
   Input,
-  InputNumber,
   Radio,
   Select,
-  Switch,
-  TreeSelect,
   Upload,
 } from 'antd';
-const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 
 const AddContainer = () => {
@@ -62,15 +54,9 @@ const AddContainer = () => {
         <Form.Item label="Price">
           <Input />
         </Form.Item>
-        {/* <Form.Item label="RangePicker">
-          <RangePicker />
-        </Form.Item> */}
         <Form.Item label="Description">
           <TextArea rows={4} />
         </Form.Item>
-        {/* <Form.Item label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item> */}
         <Form.Item label="Upload" valuePropName="fileList">
           <Upload action="/upload.do" listType="picture-card">
             <div>

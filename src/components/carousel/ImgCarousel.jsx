@@ -11,13 +11,13 @@ import Slider from 'react-slick';
 import './imgCarouselStyles.css';
 const ImgCarousel = () => {
     const settings = {
-        arrows: false,
+        arrows: false, 
         dots: false,
         initialSlide: 0,
         cssEase: 'linear',
         draggable:true,
         swipe:true,
-        speed: 10000,
+        speed: 10000, 
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
