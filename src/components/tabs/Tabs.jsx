@@ -64,7 +64,6 @@ const Tabs = () => {
                     <Cards /> 
                     <Cards /> 
                     <Cards /> 
-                    <Footer />
                 </div>
                 <div className={toggleState === 3 ? "content  active-content" : "content"}>
                     <Search />
@@ -76,7 +75,6 @@ const Tabs = () => {
                     <Cards /> 
                     <Cards /> 
                     <Cards />
-                    <Footer />
                 </div>
                 <div className={toggleState === 4 ? "content  active-content" : "content"}>
                     <Search />
@@ -88,7 +86,6 @@ const Tabs = () => {
                     <Cards /> 
                     <Cards /> 
                     <Cards />
-                    <Footer />
                 </div>
                 <div className={toggleState === 5 ? "content  active-content" : "content"}>
                     <Search />
@@ -100,7 +97,6 @@ const Tabs = () => {
                     <Cards /> 
                     <Cards /> 
                     <Cards />
-                    <Footer />
                 </div>
             </div>
         </div>

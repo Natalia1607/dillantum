@@ -1,4 +1,5 @@
 .filter__container {
+    padding: 0px;
     padding: 24px 0;
 }
 
@@ -7,11 +8,6 @@
     justify-content: center;
     align-items: flex-end;
     gap: 24px;
-}
-
-.filter .input-wrap,
-.filter .input-wrap input {
-    width: 240px;
 }
 
 .select-wrap,
@@ -34,46 +30,39 @@
 @media screen and (max-width: 1100px) {
     .filter {
         justify-content: space-between;
-        gap: 24px 0px ;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .filter {
+        gap: 24px;
         flex-wrap: wrap;
     }
 
     .filter .btn {
         margin: auto;
+        padding: 0.7rem 3rem;
+    }
+
+    .ant-space {
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .block-tabs.md-hidden {
+        display: flex;
+        justify-content: center;
+    }
+
     .filter__container {
-        width: 100%;
-        margin: auto;
+        padding-top: 8px;
     }
 
-    .filter {
+    .ant-space {
         flex-wrap: wrap;
-        width: 100%;
+        justify-content: center;
     }
-
-    .filter .input-wrap {
-        width: 45%;
-    }
-
-    .filter .input-wrap.sort {
-        width: 70%;
-    }
-
-    .filter .input-wrap input {
-        width: 100%;
-    }
-
-    .filter .btn {
-        margin: 0;
-        padding: 0.7rem 3rem;
+    
+    .select-wrap,
+    .select-wrap .ant-select-selector {
+        width: 420px;
     }
 }
 
@@ -88,8 +77,9 @@
     }
 }
 
-@media screen and (max-width: 470px) {
-    .filter .input-wrap {
-        width: 100%;
+@media screen and (max-width: 420px) {
+    .select-wrap,
+    .select-wrap .ant-select-selector {
+        width: 320px;
     }
 }

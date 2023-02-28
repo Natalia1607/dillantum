@@ -81,15 +81,48 @@
     }
 }
 
+@media screen and (max-width: 800px) {
+    .cards,
+    .card__wrapp {
+        width: 100%;
+    }
+
+    .card__wrapp {
+        display: flex;
+        gap: 24px;
+        height: auto;
+    }
+
+    .card__img {
+        width: 300px;
+        height: auto;
+    }
+
+    .card__favourite {
+        left: 12px;
+    }
+
+    .card__data {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 680px) {
+    .card__wrapp {
+        display: block;
+        width: 440px;
+    }
+
+    
     .cards {
         flex-direction: column;
         align-items: center;
         gap: 24px;
     }
 
-    .card__wrapp {
-        width: 440px;
+    .card__img {
+        width: 100%;
+        height: auto;
     }
 }
 
