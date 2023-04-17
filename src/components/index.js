@@ -1,11 +1,8 @@
-export { default as Header } from './header/Header';
-export { default as MainContainer } from './mainContainer/MainContainer';
-export { default as RegisterContainer } from './formContainer/RegisterContainer';
-export { default as SignInContainer } from './formContainer/SignInContainer';
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
 export { default as Cards } from './card/Card';
 export { default as CardContainer } from './card/CardContainer';
 export { default as AddContainer } from './card/AddContainer';
 export { default as FavouriteContainer } from './card/FavouriteContainer';
 export { default as Tabs } from './tabs/Tabs';
 export { default as Search } from './search/Search';
-export { default as Footer } from './footer/Footer';

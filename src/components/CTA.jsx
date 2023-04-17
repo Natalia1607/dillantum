@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../../config/firebase';
+import { auth } from '../config/firebase';
 
 import { RiMenu3Fill, RiCloseFill, RiUser3Fill } from 'react-icons/ri';
 
-import { useStateValue } from '../../context/StateProvider';
+import { useStateValue } from '../context/StateProvider';
 
 const CTA = () => {
   const [ nav, setNav ] = useState(false);

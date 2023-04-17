@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, Checkbox } from 'antd';
 
-import './formContainerStyles.css';
+import './AuthPage.scss';
 
 import Table from '../../assets/reg.jpg';
 
@@ -24,7 +24,7 @@ const RegisterContainer = () => {
     });
   };
   return (
-    <div className='container form__container grid'>
+    <div className='form__container container grid'>
       <div className='form__bg md-flex'><img src={Table} alt="" /></div>
       <div className="form__right register__right">
         <p>Already a member? <Link to={'/sign-in'} className='register__link'>Sign In</Link></p>
@@ -103,4 +103,4 @@ const RegisterContainer = () => {
   )
 }
 
-export default RegisterContainer
+export default RegisterContainer;

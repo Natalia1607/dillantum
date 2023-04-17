@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoIosMail, IoLogoWhatsapp } from 'react-icons/io';
-import './footerStyles.css';
+import './style.scss';
 
 const Footer = () => {
   return (

@@ -12,7 +12,8 @@ import { actionType } from '../../context/reducer';
 import { FcGoogle } from 'react-icons/fc';
 import { MdEmail } from 'react-icons/md';
 
-import './formContainerStyles.css';
+import  './AuthPage.scss';
+
 const button = {
   width: 265,
 };

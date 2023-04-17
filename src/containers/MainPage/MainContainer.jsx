@@ -1,8 +1,8 @@
 import React from 'react';
-import ImgCarousel from '../carousel/ImgCarousel';
-import CTAMain from './CTAMain';
+import ImgCarousel from '../../components/carousel/ImgCarousel';
+import { CTAMain } from './CTAMain';
 
-import './mainContainerStyles.css';
+import './mainContainerStyles.scss';
 
 const MainContainer = () => {
   return (

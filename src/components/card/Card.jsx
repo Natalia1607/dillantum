@@ -1,5 +1,5 @@
 import React from 'react';
-import './cardStyles.css';
+import './cardStyles.scss';
 import { useLocation } from 'react-router-dom';
 
 import Card from '../../assets/card.jpg';

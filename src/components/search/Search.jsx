@@ -1,5 +1,5 @@
 import React from 'react';
-import './searchStyles.css';
+import './searchStyles.scss';
 import { Select, Space, Input  } from 'antd';
 
 const handleChange = (value) => {

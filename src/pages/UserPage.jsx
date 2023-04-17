@@ -7,7 +7,7 @@ import { GiArchiveResearch } from 'react-icons/gi';
 import { MdFavorite } from 'react-icons/md';
 import { IoIosListBox } from 'react-icons/io';
 
-import './page.css';
+import './page.scss';
 
 const UserPage = () => {
   const location = useLocation();

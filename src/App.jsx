@@ -1,7 +1,7 @@
-import { Footer } from 'antd/es/layout/layout';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { FavouriteContainer, Header, MainContainer, RegisterContainer, SignInContainer } from './components';
+import { FavouriteContainer, Header, Footer } from './components';
+import { MainContainer, RegisterContainer, SignInContainer } from './containers'
 import { BuyPage, RentPage, UserPage } from './pages';
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <main>
         <Routes>
-          <Route path='/*' element={<MainContainer />}/>
+          <Route path='/' element={<MainContainer />}/>
           <Route path='/register' element={<RegisterContainer />}/>
           <Route path='/sign-in' element={<SignInContainer />}/>
           <Route path='/rent' element={<RentPage />}>

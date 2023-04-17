@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import CTA from './CTA';
-import './headerStyles.css';
-import Logo  from '../../assets/logo.svg';
+import './style.scss';
+import Logo  from '../assets/logo.svg';
 
 const Header = () => {
   const location = useLocation(); 

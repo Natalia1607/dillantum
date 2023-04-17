@@ -3,8 +3,8 @@ import { Breadcrumb, Select, Space, } from 'antd';
 import { Link } from 'react-router-dom';
 import Cards from '../card/Card';
 import Search from '../search/Search';
-import Footer from '../footer/Footer';
-import './tabsStyles.css'; 
+import Footer from '../Footer';
+import './tabsStyles.scss'; 
 
 const handleChange = (value) => {
   console.log(`selected ${value}`);

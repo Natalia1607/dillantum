@@ -8,7 +8,8 @@ import slide5 from '../../assets/slide5.jpg';
 import slide6 from '../../assets/slide6.jpg';
 import Slider from 'react-slick';
 
-import './imgCarouselStyles.css';
+import './imgCarouselStyles.scss';
+
 const ImgCarousel = () => {
     const settings = {
         arrows: false, 

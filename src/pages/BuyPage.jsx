@@ -2,7 +2,7 @@ import { Breadcrumb } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Cards, Search, Footer } from '../components';
-import './page.css';
+import './page.scss';
 
 
 const Buy = () => {
