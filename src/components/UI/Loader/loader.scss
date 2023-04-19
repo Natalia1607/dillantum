@@ -1,0 +1,21 @@
+.loader__wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    color: var(--color-primary-variant);
+}
+
+.loader__text {
+    margin-top: 0.5rem;
+    color: var(--color-text); 
+    font-size: 1.25rem;
+
+}
