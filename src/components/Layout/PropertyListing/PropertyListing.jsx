@@ -9,21 +9,23 @@ import './propertyListing.scss';
 
 const Properties = () => {
   const { data, isFetching, error } = useGetProperyListQuery();
-
   const propertiesData = data?.hits;
 
   const mappedList = propertiesData?.map((property) => {
     return (
       <PropertiesItem
-        key={property?.externalID}
+        key={property?.externalID} 
         id={property?.externalID}
-        numOfBed={property?.rooms}
-        numOfBath={property?.baths}
+        rooms={property?.rooms}
+        baths={property?.baths}
         size={property?.area}
         price={property?.price}
-        address={property?.title}
-        image={property?.coverPhoto?.url}
-        state={property?.state}
+        title={property?.location[2].name}
+        city={property?.location[0].name}
+        address={property?.location[1].name}
+        agency={property?.agency}
+        coverPhoto={property?.coverPhoto?.url}
+        isVerified={property?.isVerified}
         rentType={property?.rentFrequency}
       />
     );

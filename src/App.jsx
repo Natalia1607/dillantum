@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { FavouriteContainer, Header, Footer } from './components';
 import { MainContainer, RegisterContainer, SignInContainer } from './containers'
-import { BuyPage, RentPage, UserPage } from './pages';
+import { BuyPage, PropertyPage, RentPage, UserPage } from './pages';
 
 const App = () => {
   return (
@@ -25,6 +25,7 @@ const App = () => {
             <Route path='/personal_account/favorites' element={<FavouriteContainer />}/>
             <Route path='/personal_account/ads' element={<UserPage />}/>
           </Route>
+          <Route path='/property/:propertyId' element={<PropertyPage />}/>
         </Routes>
       </main>
     </div>

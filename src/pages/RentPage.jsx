@@ -25,7 +25,7 @@ const Rent = () => {
             <Breadcrumb.Item>Property for Rent</Breadcrumb.Item>
           </Breadcrumb>
         </div>
-        <Properties />
+        <Properties/>
       </div>
       <Footer />
     </div>

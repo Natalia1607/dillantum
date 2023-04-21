@@ -1,0 +1,48 @@
+.property__image img {
+    width: 100%;
+    height: auto;
+}
+
+.property__price {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.property__address {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.property__icon {
+    font-weight: 500;
+    font-size: 18px;   
+}
+
+.property__icon span {
+    font-weight: 300;
+    font-size: 14px;  
+}
+
+.property__title {
+    font-weight: 500;
+    font-size: 20px;   
+}
+
+.property__feature {
+    padding: 0.2rem 0.5rem;
+    font-weight: 500;
+    background-color: var(--color-primary);
+    border-radius: 9999px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .property__container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .property__amenities {
+        flex-wrap: wrap;
+    }
+}
