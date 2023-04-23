@@ -33,6 +33,9 @@
     font-weight: 500;
     background-color: var(--color-primary);
     border-radius: 9999px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -45,4 +48,23 @@
     .property__amenities {
         flex-wrap: wrap;
     }
+}
+
+.agency__logo {
+    width: 100px;
+}
+
+.agency__logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.property__link {
+    padding: 6px;
+    background-color: var(--color-primary);
+    font-weight: 500;
+}
+
+.fancybox__img {
+    display: none;
 }

@@ -21,7 +21,7 @@ export const CTAMain = ({ propertyForSale, propertyForRent }) => {
         <Link to={"/rent"} className='btn hover-diagonal'>Rent</Link>
         <Link to={'/buy'} className='btn hover-diagonal'>Buy</Link>
       </div>
-      {authUser ? <Link to={'/personal_account/ads'} className='btn btn-primary hover-diagonal_light'>Upload</Link> : <p className='none'></p>}
+      <Link to={authUser ? '/personal_account/ads' : '/register'} className='btn btn-primary hover-diagonal_light'>Sell</Link> 
     </div>
   )
 }
