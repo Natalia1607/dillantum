@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { RiHotelBedFill } from "react-icons/ri";
 import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
@@ -9,7 +9,7 @@ import millify from "millify";
 import Fancybox from "../../fancybox/Fancybox";
 import "./propertyDetalItems.scss";
 
-const PropertyDetailItems = ({
+const PropertyDetailItems = ({ 
   id,
   coverPhoto,
   photos,
@@ -31,9 +31,12 @@ const PropertyDetailItems = ({
   logo,
   type,
   purpose,
+  geoLat,
+  geoLng,
+  furnishing,
 }) => {
   return (
-    <div className="property__container container pt24">
+    <div className="property__container container pt24" key={id}>
       <div className="property__image mb12">
         <img src={coverPhoto} alt="real estate" />
         <div className="property__image-side">
@@ -78,7 +81,7 @@ const PropertyDetailItems = ({
       <p className="property__address mb24 flex gap">
         {title}, {address}, {city} 
       <a href="#" className="flex gap_6"><FaMapMarkedAlt className="icon" />View map</a>
-      </p> 
+      </p>
       <div className="flex gap mb24">
         <div className="property__icon flex ai-c gap_6">
           <RiHotelBedFill className="icon" />
@@ -111,6 +114,9 @@ const PropertyDetailItems = ({
           </li>
           <li>
             Purpose - <span>{purpose}</span>
+          </li>
+          <li>
+            Furnishing - <span>{furnishing}</span>
           </li>
           <li>
             Status - <span>{isVerified}</span>

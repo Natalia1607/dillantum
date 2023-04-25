@@ -74,14 +74,15 @@
     text-transform: capitalize; 
 }
 
+.property__amenities {
+    flex-wrap: wrap;
+}
+
+
 @media screen and (max-width: 768px) {
     .property__container {
         padding-left: 15px;
         padding-right: 15px;
-    }
-
-    .property__amenities {
-        flex-wrap: wrap;
     }
 
     .property__image {

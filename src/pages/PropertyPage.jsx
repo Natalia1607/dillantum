@@ -41,6 +41,9 @@ const PropertyPage = () => {
               phoneNumber={data?.phoneNumber}
               type={data?.category[1]?.name}
               purpose={data?.purpose}
+              geoLat={data?.geography?.lat}
+              geoLng={data?.geography?.lng}
+              furnishing={data?.furnishingStatus}
             /> 
           )}
           {isFetching && <Loader />}
