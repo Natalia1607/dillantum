@@ -4,6 +4,7 @@ import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { BsFillTelephoneFill, BsWhatsapp } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
+import { FaMapMarkedAlt } from "react-icons/fa";
 import millify from "millify";
 import Fancybox from "../../fancybox/Fancybox";
 import "./propertyDetalItems.scss";
@@ -35,6 +36,10 @@ const PropertyDetailItems = ({
     <div className="property__container container pt24">
       <div className="property__image mb12">
         <img src={coverPhoto} alt="real estate" />
+        <div className="property__image-side">
+          <img src={photos[1]?.url} alt="real estate" />
+          <img src={photos[2]?.url} alt="real estate" />
+        </div>
       </div>
       <div className="mb24 flex gap">
       <Fancybox
@@ -44,7 +49,7 @@ const PropertyDetailItems = ({
             },
           }}
         >
-          <a data-fancybox="gallery" href={`${photos[0]?.url}`} className="property__link flex ai-c">
+          <a data-fancybox="gallery" href={`${logo}`} className="property__link flex ai-c">
             <HiOutlinePhotograph className="icon" />
             &nbsp;Photos
           </a>
@@ -68,11 +73,12 @@ const PropertyDetailItems = ({
  
       </div>
       <p className="property__price mb24">
-        {`AED ${price}`} /{rentType}
+        {`AED ${price}`} / {rentType}
       </p>
-      <p className="property__address mb24">
-        {title}, {address}, {city}
-      </p>
+      <p className="property__address mb24 flex gap">
+        {title}, {address}, {city} 
+      <a href="#" className="flex gap_6"><FaMapMarkedAlt className="icon" />View map</a>
+      </p> 
       <div className="flex gap mb24">
         <div className="property__icon flex ai-c gap_6">
           <RiHotelBedFill className="icon" />
@@ -99,15 +105,15 @@ const PropertyDetailItems = ({
       </div>
       <div className="property__desc mb24">
         <h3 className="property__title mb12">Property Information</h3>
-        <ul>
+        <ul className="property__list">
           <li>
-            Type <span>{type}</span>
+            Type - <span>{type}</span>
           </li>
           <li>
-            Purpose <span>{purpose}</span>
+            Purpose - <span>{purpose}</span>
           </li>
           <li>
-            Status <span>{isVerified}</span>
+            Status - <span>{isVerified}</span>
           </li>
         </ul>
       </div>

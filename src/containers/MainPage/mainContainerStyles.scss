@@ -5,7 +5,7 @@
     grid-template-areas: 
     "main__container_carousel h1"
     "main__container_carousel cta-main";
-    height: 100vh;
+    height: calc(100vh - 90px);
     overflow: hidden;
 }
 
@@ -109,6 +109,10 @@
 }
 
 @media screen and (max-width: 430px) {
+    .main__container {
+        height: calc(100vh - 105px);
+    }
+
     .main__container h1 {
         margin-bottom: 20vh;
     }
