@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Breadcrumb, Select, Space, } from 'antd';
 import { Link } from 'react-router-dom';
 import Cards from '../card/Card';
-import Search from '../search/Search';
+import Search from '../Search/Search';
 import Footer from '../Footer';
 import './tabsStyles.scss'; 
 

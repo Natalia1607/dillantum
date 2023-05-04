@@ -1,18 +1,28 @@
-import React from 'react';
-import './searchStyles.scss';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import PropertiesItem from '../Data/PropertiesItem/PropertiesItem';
 import { Select, Space, Input  } from 'antd';
+import { useGetServerSidePropsQuery } from '../../redux/services/bayut';
+
+import './searchStyles.scss';
 
 const handleChange = (value) => {
   console.log(`selected ${value}`);
 };
 
 const Search = () => {
+  /* const [] */
   return (
     <div className='filter__container'>
         <div className='filter'>
-        <Space>
+        <Input 
+            className="select-wrap"
+            placeholder="Search"
+            onChange={(event) => console.log(event)}
+        />
+        {/* <Space>
             <Select
-                className="select-wrap"
+                className="select-wrap" 
                 defaultValue="Dubai"
                 onChange={handleChange}
                 options={[
@@ -77,7 +87,7 @@ const Search = () => {
                     },
                 ]}
             />      
-        </Space>
+        </Space> */}
         <button className='btn btn-primary hover-diagonal_light'>Search</button>
         </div>
     </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Cards, Search, Footer } from '../components';
 import './page.scss';
-import Properties from '../components/Layout/PropertyListing/PropertyListing';
+import PropertyList from '../components/Layout/PropertyList/PropertyList';
 
 
 const Buy = () => {
@@ -19,7 +19,7 @@ const Buy = () => {
                 <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                 <Breadcrumb.Item>Property for Buy</Breadcrumb.Item>
             </Breadcrumb> 
-            <Properties />
+            <PropertyList />
             <div className='cards-wrapp'>
                 <h3 className='mt24'><a href="#">Our recommendations</a></h3>
 

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { FavouriteContainer, Header, Footer } from './components';
 import { MainContainer, RegisterContainer, SignInContainer } from './containers'
 import { BuyPage, PropertyPage, RentPage, UserPage } from './pages';
+import SearchPage from './pages/SearchPage';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
             <Route path='/personal_account/ads' element={<UserPage />}/>
           </Route>
           <Route path='/property/:propertyId' element={<PropertyPage />}/>
+          <Route path='/property/:propertyId' element={<SearchPage />}/>
         </Routes>
       </main>
     </div>

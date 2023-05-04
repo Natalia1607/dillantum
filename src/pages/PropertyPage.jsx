@@ -10,12 +10,12 @@ import { Footer } from "../components";
 
 const PropertyPage = () => {
   const params = useParams();
-  const { propertyId } = params;
+  const { propertyId } = params; 
   const { data, isFetching, error } = useGetProperyDetailsQuery(propertyId);
 
   return (
     <>
-      <section className="mb48">
+      <section className="container mb48">
         <div>
           {!isFetching && !error && (
             <PropertyDetailItems

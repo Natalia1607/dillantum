@@ -83,6 +83,44 @@ header {
     color: var(--color-text);
 }
 
+.header__account {
+    position: relative;
+}
+
+.account__panel {
+    position: absolute;
+    left: -148px;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 6px;
+    width: 180px;
+    background-color: #3b2c1da1;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.account__panel a,
+.account__panel .icon {
+    color: #fff;
+}
+
+.account__panel.opacity {
+    opacity: 1;
+}
+
+.account__panel p {
+    cursor: pointer;
+}
+
+.account__panel p:hover {
+    color: #ffffffaa;
+}
+
 /* media */
 @media screen and (max-width: 1200px) {
    .header__menu {
@@ -100,17 +138,16 @@ header {
    .header__menu {
     width: 100%;
    } 
+
+   .account__panel {
+    left: -160px;
+   }
 }
 
 @media screen and (max-width: 430px) {
     header {
         height: max-content;
         padding: 12px 0;
-    }
-
-    .container_column {
-        flex-direction: column;
-        justify-content: space-evenly;
     }
 
     .header__logotip {

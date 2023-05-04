@@ -5,4 +5,4 @@ export { default as CardContainer } from './card/CardContainer';
 export { default as AddContainer } from './card/AddContainer';
 export { default as FavouriteContainer } from './card/FavouriteContainer';
 export { default as Tabs } from './tabs/Tabs';
-export { default as Search } from './search/Search';
+export { default as Search } from './Search/Search';

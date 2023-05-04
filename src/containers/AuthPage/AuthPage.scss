@@ -44,11 +44,6 @@
     width: 410px;
 }
 
-#form__opacity {
-    opacity: 0;
-    transition: var(--transition);
-}
-
 .register__link {
     color: var(--color-heading);
     font-weight: 500;
@@ -96,7 +91,7 @@
 /* animation */
 .form__bg {
     opacity: 0;
-    animation: fadeIn 5s forwards;
+    animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeIn {
@@ -106,6 +101,19 @@
     100% {
         opacity: 1;
     }
+}
+
+.form__opacity {
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.form__opacity.opacity {
+    opacity: 1;
+}
+
+.result {
+    flex-direction: column;
 }
 
 /* mobile */

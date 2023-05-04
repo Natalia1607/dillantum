@@ -9,10 +9,12 @@ import millify from "millify";
 import Fancybox from "../../fancybox/Fancybox";
 import "./propertyDetalItems.scss";
 
+import { Breadcrumb } from "antd";
+
 const PropertyDetailItems = ({ 
   id,
   coverPhoto,
-  photos,
+  photos, 
   floorPlan,
   title,
   city,
@@ -36,7 +38,12 @@ const PropertyDetailItems = ({
   furnishing,
 }) => {
   return (
-    <div className="property__container container pt24" key={id}>
+    <div className="property__container pt24" key={id}>
+      <Breadcrumb separator=">" className="breadcrumb mb24">
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/rent">{purpose}</Breadcrumb.Item>
+        <Breadcrumb.Item>{title}</Breadcrumb.Item>
+      </Breadcrumb>
       <div className="property__image mb12">
         <img src={coverPhoto} alt="real estate" />
         <div className="property__image-side">

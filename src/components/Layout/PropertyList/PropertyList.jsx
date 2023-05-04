@@ -5,9 +5,9 @@ import { useGetProperyListQuery } from "../../../redux/services/bayut";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 
-import './propertyListing.scss';
+import './propertyList.scss';
 
-const Properties = () => {
+const PropertyList = () => {
   const { data, isFetching, error } = useGetProperyListQuery();
   const propertiesData = data?.hits;
 
@@ -42,4 +42,4 @@ const Properties = () => {
   );
 };
 
-export default Properties;
+export default PropertyList;

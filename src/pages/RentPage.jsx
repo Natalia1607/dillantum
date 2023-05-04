@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Breadcrumb } from "antd";
-import { Cards, Tabs, Search, Footer } from "../components";
+import { Cards, Tabs, Footer } from "../components";
 import "./page.scss";
-import Properties from "../components/Layout/PropertyListing/PropertyListing";
+import PropertyList from "../components/Layout/PropertyList/PropertyList";
+import SearchFilters from "../components/Data/SearchFilters/SearchFilters";
 
 const Rent = () => {
   const location = useLocation();
@@ -19,13 +20,13 @@ const Rent = () => {
       <div className="content__container">
         <Tabs />
         <div className={location.pathname === "/rent" ? "" : "none"}>
-          <Search />
+          <SearchFilters />
           <Breadcrumb separator=">" className="breadcrumb">
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
             <Breadcrumb.Item>Property for Rent</Breadcrumb.Item>
           </Breadcrumb>
         </div>
-        <Properties/>
+        <PropertyList/>
       </div>
       <Footer />
     </div>
