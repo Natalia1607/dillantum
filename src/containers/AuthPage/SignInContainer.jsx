@@ -13,7 +13,8 @@ import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 
 import { onAuthStateChanged } from "firebase/auth";
-import { Button, Result } from "antd";
+import { Result } from "antd";
+import { Link } from "react-router-dom";
 
 import "./AuthPage.scss";
 
@@ -36,6 +37,7 @@ const SignInContainer = () => {
       listen();
     };
   }, []);
+  
   const appearance = () => {
     const el = document.querySelector("#form__opacity");
     el.classList.toggle("opacity");
@@ -147,17 +149,20 @@ const SignInContainer = () => {
           </Form>
         </div>
       ) : (
-        <Result
-          status="success"
-          title="Successful Registration"
-          subTitle=""
-          extra={[
-            <Button type="primary" key="console">
-              Go Console
-            </Button>,
-            <Button key="buy">Buy Again</Button>,
-          ]}
-        />
+        <div className="result">
+          <Result
+            status="success"
+            title={`You Are Logged In As ${email}`}
+          />
+          <div className="flex gap jc-c">
+            <Link to={"/personal_account"} className="btn">
+              Account
+            </Link>
+            <Link to={"/createItem"} className="btn">
+              Sell
+            </Link>
+          </div>
+        </div>
       )}
     </div>
   );

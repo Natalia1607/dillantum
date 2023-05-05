@@ -73,7 +73,7 @@ const CTA = () => {
             </div>
           </div>
         ) : (
-          <div className="cta flex jc-sb gap">
+          <div className="cta flex jc-sb">
             <Link to={"/sign-in"} className="btn">
               Sign in
             </Link>

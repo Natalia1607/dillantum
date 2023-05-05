@@ -8,13 +8,13 @@ const SearchFilters = () => {
     const values = getFilterValues(filterValues);
     values.forEach((item) => {
       if(item.value && filterValues?.[item.name]) {
-        query[item.name] = item.value
+        [item.name] = item.value
       }
     })
   };
 
   return (
-    <div>
+    <div id="filter__opacity" className="search-filters flex gap_6 jc-c mb12 opacity">
       {filters.map((filter) => (
         <div key={filter.queryName}>
           <Select

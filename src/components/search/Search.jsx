@@ -1,97 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import PropertiesItem from '../Data/PropertiesItem/PropertiesItem';
-import { Select, Space, Input  } from 'antd';
-import { useGetServerSidePropsQuery } from '../../redux/services/bayut';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import PropertiesItem from "../Data/PropertiesItem/PropertiesItem";
+import { Input } from "antd";
+import { useGetServerSidePropsQuery } from "../../redux/services/bayut";
+import { BsFilter } from "react-icons/bs";
 
-import './searchStyles.scss';
+import "./searchStyles.scss";
+import SearchFilters from "../Data/SearchFilters/SearchFilters";
 
 const handleChange = (value) => {
   console.log(`selected ${value}`);
 };
 
 const Search = () => {
-  /* const [] */
+  const appearance = () => {
+    const el = document.querySelector("#filter__opacity");
+    el.classList.toggle("opacity");
+  };
+
   return (
-    <div className='filter__container'>
-        <div className='filter'>
-        <Input 
+    <div>
+      <div className="filter__container flex ai-c jc-sb">
+        <div className="filter">
+          <Input
             className="select-wrap"
             placeholder="Search"
             onChange={(event) => console.log(event)}
-        />
-        {/* <Space>
-            <Select
-                className="select-wrap" 
-                defaultValue="Dubai"
-                onChange={handleChange}
-                options={[
-                    {
-                    value: 'Dubai',
-                    label: 'Dubai',
-                    },
-                    {
-                    value: 'Abu Dhabi',
-                    label: 'Abu Dhabi',
-                    },
-                    {
-                    value: 'Sharjah',
-                    label: 'Sharjah',
-                    },
-                    {
-                    value: 'Ajman',
-                    label: 'Ajman',
-                    },
-                    {
-                    value: 'Fujairah',
-                    label: 'Fujairah',
-                    },
-                    {
-                    value: 'Umm Al Quwain',
-                    label: 'Umm Al Quwain',
-                    },
-                    {
-                    value: 'Ras Al Khaimah',
-                    label: 'Ras Al Khaimah',
-                    },
-                ]}
-            />
-            <Input 
-                className="select-wrap"
-                placeholder="City"
-            />      
-            <Select
-                className="select-wrap"
-                defaultValue="Price (High to Low)"
-                onChange={handleChange}
-                options={[
-                    {
-                    value: 'Price (High to Low)',
-                    label: 'Price (High to Low)',
-                    },
-                    {
-                    value: 'Price (Low to High)',
-                    label: 'Price (Low to High)',
-                    },
-                    {
-                    value: 'Number of rooms',
-                    label: 'Number of rooms',
-                    },
-                    {
-                    value: 'Number of saves',
-                    label: 'Number of saves',
-                    },
-                    {
-                    value: 'Top Rated',
-                    label: 'Top Rated',
-                    },
-                ]}
-            />      
-        </Space> */}
-        <button className='btn btn-primary hover-diagonal_light'>Search</button>
+          />
         </div>
+        <div>
+          <BsFilter className="icon" style={{ fontSize: "24px" }}  onClick={appearance}/>
+        </div>
+      </div>
+      <SearchFilters />
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

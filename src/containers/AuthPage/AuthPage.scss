@@ -1,151 +1,152 @@
 /* General styles */
 .form__container {
-    grid-template-columns: 0.9fr 1fr;
-    justify-items: center;
-    height: 100vh;
-    overflow: hidden;
+  grid-template-columns: 0.9fr 1fr;
+  justify-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .form__bg {
-    background: var(--color-white);
-    height: 100%;
-    width: 100%;
+  background: var(--color-white);
+  height: 100%;
+  width: 100%;
 }
 
-.form__bg  img {
-    width: 100%;
+.form__bg img {
+  width: 100%;
 }
 
 .form__right > p {
-    margin-bottom: 60px;
-    text-align: right;
+  margin-bottom: 60px;
+  text-align: right;
 }
 
 .form__right h2 {
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 130%;
-    color: var(--color-text);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 130%;
+  color: var(--color-text);
 }
 
 .sign__right {
-    margin-top: 20vh;
+  margin-top: 20vh;
 }
 
 .sign__right .btn:hover {
-    color: var(--color-text);
+  color: var(--color-text);
 }
 
 .register__right {
-    margin-top: 10vh;
+  margin-top: 10vh;
 }
 
 .form {
-    width: 410px;
+  width: 410px;
 }
 
 .register__link {
-    color: var(--color-heading);
-    font-weight: 500;
+  color: var(--color-heading);
+  font-weight: 500;
 }
 
 .register__link:hover {
-    transition: var(--transition);
-    text-decoration-line: underline;
+  transition: var(--transition);
+  text-decoration-line: underline;
 }
 
 .item__input label {
-    font-family: var(--font-main);
-    font-weight: 600;
-    font-size: 16px!important;
-    line-height: 19px;
-    color: var(--color-text)!important;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 16px !important;
+  line-height: 19px;
+  color: var(--color-text) !important;
 }
 
 .item__input input,
 .item__input .ant-input-password {
-    height: 40px;
-    background: var(--color-white);
-    border: 1px solid #F5EEE3;
-    border-radius: 5px;
-    outline: none;
+  height: 40px;
+  background: var(--color-white);
+  border: 1px solid #f5eee3;
+  border-radius: 5px;
+  outline: none;
 }
 
 .item__input input:hover:not(.ant-input-password input) {
-    border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 .item__input input:focus:not(.ant-input-password input) {
-    border: 1px solid var(--color-primary-variant);
-    box-shadow: none;
+  border: 1px solid var(--color-primary-variant);
+  box-shadow: none;
 }
 
 .item__input .ant-input-password input {
-    height: 30px;
+  height: 30px;
 }
 
 .item__input .ant-input-password:hover {
-    border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 /* animation */
 .form__bg {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .form__opacity {
-    opacity: 0;
-    transition: var(--transition);
+  opacity: 0;
+  transition: var(--transition);
 }
 
 .form__opacity.opacity {
-    opacity: 1;
+  opacity: 1;
 }
 
-.result {
-    flex-direction: column;
+.result .btn:hover {
+  color: var(--color-text);
 }
 
 /* mobile */
 @media screen and (max-width: 900px) {
-    .form__container {
-        display: block;
-        background: linear-gradient(0deg, #e2dacb8f, #d3c1a252), url('../../assets/bg__mobile.jpg') center / cover no-repeat;
-    }
+  .form__container {
+    display: block;
+    background: linear-gradient(0deg, #e2dacb8f, #d3c1a252),
+      url("../../assets/bg__mobile.jpg") center / cover no-repeat;
+  }
 
-    .form__bg.md-flex {
-        display: none;
-    }
+  .form__bg.md-flex {
+    display: none;
+  }
 
-    .form {
-        margin: auto;
-    }
+  .form {
+    margin: auto;
+  }
 
-    .form__right h2 {
-        text-align: center;
-    }
+  .form__right h2 {
+    text-align: center;
+  }
 
-    .sign__right .btn {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .sign__right .btn.btn-primary.hover-diagonal_light {
-        margin-left: 0;
-    }
+  .sign__right .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sign__right .btn.btn-primary.hover-diagonal_light {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 430px) {
-    .form {
-        width: 100%;
-    }
+  .form {
+    width: 100%;
+  }
 }

@@ -142,22 +142,21 @@ const RegisterContainer = () => {
           </div>
         </div>
       ) : (
-        <Result
-          className="result flex jc-c"
-          status="success"
-          title="Successful Registration"
-          subTitle=""
-          extra={[
-            <div className="flex gap jc-c">
-              <Link to={"/personal_account"} className="btn">
-                Account
-              </Link>
-              <Link to={"/createItem"} className="btn">
-                Sell
-              </Link>
-            </div>
-          ]}
-        />
+        <div className="result">
+          <Result
+            status="success"
+            title="Successful Registration"
+            subTitle=""
+          />
+          <div className="flex gap jc-c">
+            <Link to={"/personal_account"} className="btn">
+              Account
+            </Link>
+            <Link to={"/createItem"} className="btn">
+              Sell
+            </Link>
+          </div>
+        </div>
       )}
     </div>
   );

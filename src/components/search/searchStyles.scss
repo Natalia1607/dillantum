@@ -1,85 +1,99 @@
 .filter__container {
-    padding: 0px;
-    padding: 24px 0;
+  padding: 0px;
+  padding: 24px 0;
 }
 
 .filter {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 24px;
 }
 
 .select-wrap,
 .select-wrap .ant-select-selector {
-    width: 240px; 
-    outline: none; 
+  width: 240px;
+  outline: none;
+}
+
+.filter input:active,
+.filter input:focus {
+  width: 380px;
 }
 
 .ant-select-selection-item,
 .ant-space-item .ant-input[placeholder] {
-    font-family: var(--font-main);
+  font-family: var(--font-main);
 }
 
 .select-wrap:hover,
 .select-wrap:hover .ant-select-selector {
-    border-color: var(--color-primary)!important;
+  border-color: var(--color-primary) !important;
+}
+
+.search-filters {
+    opacity: 0;
+    flex-wrap: wrap;
+}
+
+.search-filters.opacity {
+    opacity: 1;
 }
 
 /* mobile */
 @media screen and (max-width: 1100px) {
-    .filter {
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
+  .filter {
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
 
-    .filter .btn {
-        margin: auto;
-        padding: 0.7rem 3rem;
-    }
+  .filter .btn {
+    margin: auto;
+    padding: 0.7rem 3rem;
+  }
 
-    .ant-space {
-        width: 100%;
-        justify-content: center;
-    }
+  .ant-space {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .block-tabs.md-hidden {
-        display: flex;
-        justify-content: center;
-    }
+  .block-tabs.md-hidden {
+    display: flex;
+    justify-content: center;
+  }
 
-    .filter__container {
-        padding-top: 8px;
-    }
+  .filter__container {
+    padding-top: 8px;
+  }
 
-    .ant-space {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .select-wrap,
-    .select-wrap .ant-select-selector {
-        width: 420px;
-    }
+  .ant-space {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .select-wrap,
+  .select-wrap .ant-select-selector {
+    width: 420px;
+  }
 }
 
 @media screen and (max-width: 580px) {
-    .filter .input-wrap.sort {
-        width: 100%;
-    }
+  .filter .input-wrap.sort {
+    width: 100%;
+  }
 
-    .filter .btn {
-        margin: auto;
-        padding: 0.7rem 8rem;
-    }
+  .filter .btn {
+    margin: auto;
+    padding: 0.7rem 8rem;
+  }
 }
 
 @media screen and (max-width: 420px) {
-    .select-wrap,
-    .select-wrap .ant-select-selector {
-        width: 320px;
-    }
+  .select-wrap,
+  .select-wrap .ant-select-selector {
+    width: 320px;
+  }
 }
