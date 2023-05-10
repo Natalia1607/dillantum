@@ -56,6 +56,9 @@ const SignInContainer = () => {
       });
   };
 
+  window.localStorage.setItem('name', `${email}`);
+  const name = window.localStorage.getItem('name');
+
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
   /* const [{user}, dispatch] = useStateValue(); */
@@ -152,14 +155,14 @@ const SignInContainer = () => {
         <div className="result">
           <Result
             status="success"
-            title={`You Are Logged In As ${email}`}
+            title={`You Are Logged In As ${name}`}
           />
           <div className="flex gap jc-c">
             <Link to={"/personal_account"} className="btn">
               Account
             </Link>
             <Link to={"/createItem"} className="btn">
-              Sell
+              Upload
             </Link>
           </div>
         </div>

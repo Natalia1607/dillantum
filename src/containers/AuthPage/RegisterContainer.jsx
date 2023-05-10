@@ -153,7 +153,7 @@ const RegisterContainer = () => {
               Account
             </Link>
             <Link to={"/createItem"} className="btn">
-              Sell
+              Upload
             </Link>
           </div>
         </div>

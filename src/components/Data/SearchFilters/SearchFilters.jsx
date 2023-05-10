@@ -14,7 +14,7 @@ const SearchFilters = () => {
   };
 
   return (
-    <div id="filter__opacity" className="search-filters flex gap_6 jc-c mb12 opacity">
+    <div className="search-filters flex gap_6 jc-c mb12">
       {filters.map((filter) => (
         <div key={filter.queryName}>
           <Select
