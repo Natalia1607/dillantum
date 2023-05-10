@@ -5,14 +5,15 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 import { RiMenu3Fill, RiCloseFill, RiUser3Fill } from "react-icons/ri";
-import { MdAdd, MdLogout } from 'react-icons/md';
-import { RiUserSharedLine } from 'react-icons/ri';
+import { MdAdd, MdLogout } from "react-icons/md";
+import { RiUserSharedLine } from "react-icons/ri";
 
 const CTA = () => {
   const appearance = () => {
-    const el = document.querySelector('#account__panel_opacity');
-    el.classList.toggle("opacity");
+    const elements = document.querySelectorAll(".account__panel_opacity");
+    elements.forEach((el) => el.classList.toggle("opacity"));
   };
+
   const [nav, setNav] = useState(false);
   const [authUser, setAuthUser] = useState(null);
   useEffect(() => {
@@ -51,10 +52,7 @@ const CTA = () => {
           /* <Link to={'!#'} className='btn' onClick={userSignOut}>Sign out</Link> */
           <div className="header__account">
             <RiUser3Fill className="icon" size={20} onClick={appearance} />
-            <div
-              id="account__panel_opacity"
-              className="account__panel"
-            >
+            <div className="account__panel account__panel_opacity">
               <Link to={"/personal_account"}>
                 <p>
                   Personal Account <RiUserSharedLine className="icon" />
@@ -65,9 +63,7 @@ const CTA = () => {
                   New Item <MdAdd className="icon" />
                 </p>
               </Link>
-              <p
-                onClick={userSignOut}
-              >
+              <p onClick={userSignOut}>
                 Logout <MdLogout className="icon" />
               </p>
             </div>
@@ -89,9 +85,24 @@ const CTA = () => {
     <>
       <div className="header__icons flex ai-c">
         {authUser ? (
-          <Link to={"/personal_account"}>
-            <RiUser3Fill className="icon" size={20} />
-          </Link>
+          <div>
+            <RiUser3Fill className="icon" size={20} onClick={appearance} />
+            <div className="account__panel account__panel_opacity">
+              <Link to={"/personal_account"}>
+                <p>
+                  Personal Account <RiUserSharedLine className="icon" />
+                </p>
+              </Link>
+              <Link to={"/createItem"}>
+                <p>
+                  New Item <MdAdd className="icon" />
+                </p>
+              </Link>
+              <p onClick={userSignOut}>
+                Logout <MdLogout className="icon" />
+              </p>
+            </div>
+          </div>
         ) : (
           <p className="none"></p>
         )}

@@ -145,7 +145,7 @@ const RegisterContainer = () => {
         <div className="result">
           <Result
             status="success"
-            title="Successful Registration"
+            title="Successful registration"
             subTitle=""
           />
           <div className="flex gap jc-c">
@@ -156,6 +156,12 @@ const RegisterContainer = () => {
               Upload
             </Link>
           </div>
+          <p>
+            Change account.{" "}
+            <Link to={"/sign-in"} className="register__link">
+              Sign In
+            </Link>
+          </p>
         </div>
       )}
     </div>

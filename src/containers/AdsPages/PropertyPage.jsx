@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import PropertyDetailItems from "../components/Data/PropertyDetailItems/PropertyDetailItems";
+import PropertyDetailItems from "../../components/Data/PropertyDetailItems/PropertyDetailItems";
 
-import Loader from "../components/UI/Loader/Loader";
-import Error from "../components/UI/Error/Error";
+import Loader from "../../components/UI/Loader/Loader";
+import Error from "../../components/UI/Error/Error";
 
-import { useGetProperyDetailsQuery } from "../redux/services/bayut";
-import { Footer } from "../components";
+import { useGetProperyDetailsQuery } from "../../redux/services/bayut";
+import { Footer } from "../../components";
 
 const PropertyPage = () => {
   const params = useParams();
@@ -14,7 +14,7 @@ const PropertyPage = () => {
   const { data, isFetching, error } = useGetProperyDetailsQuery(propertyId);
 
   return (
-    <>
+    <div>
       <section className="container mb48">
         <div>
           {!isFetching && !error && (
@@ -51,7 +51,7 @@ const PropertyPage = () => {
         </div>
       </section>
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -155,7 +155,7 @@ const SignInContainer = () => {
         <div className="result">
           <Result
             status="success"
-            title={`You Are Logged In As ${name}`}
+            title={`You are logged in as ${name}`}
           />
           <div className="flex gap jc-c">
             <Link to={"/personal_account"} className="btn">
