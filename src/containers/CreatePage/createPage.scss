@@ -1,0 +1,60 @@
+.container__upload {
+    margin: auto;
+    margin-top: 25px;
+    padding: 20px;
+    width: 60%;
+    min-height: 80vh;
+    border: 1px solid var(--color-primary-variant);
+}
+
+.container__upload div {
+    margin-bottom: 20px;
+}
+
+.upload__input {
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.upload__input .icon {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+.upload__input input {
+    padding: 5px 35px;
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-primary-variant);
+}
+
+.container__upload select {
+    width: 100%;
+    margin: auto;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: white;
+    text-align: center;
+}
+
+.upload__image {
+    min-height: 500px;
+    border: 1px solid var(--color-primary-variant);
+    border-radius: 10%;
+}
+
+.upload__image .loader {
+    width: 170px;
+    height: 250px;
+}
+
+.upload__image .loader__text {
+    display: none;
+}

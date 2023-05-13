@@ -1,14 +1,6 @@
 export const filterData = [
   {
     items: [
-      { name: "Buy", value: "for-sale" },
-      { name: "Rent", value: "for-rent" },
-    ],
-    placeholder: "Purpose",
-    queryName: "purpose",
-  },
-  {
-    items: [
       { name: "Daily", value: "daily" },
       { name: "Weekly", value: "weekly" },
       { name: "Monthly", value: "monthly" },
@@ -136,7 +128,6 @@ export const filterData = [
 
 export const getFilterValues = (filterValues) => {
   const {
-    purpose,
     rentFrequency,
     categoryExternalID,
     minPrice,
@@ -149,10 +140,6 @@ export const getFilterValues = (filterValues) => {
   } = filterValues;
 
   const values = [
-    {
-      name: "purpose",
-      value: purpose,
-    },
     {
       name: "rentFrequency",
       value: rentFrequency,
@@ -193,3 +180,16 @@ export const getFilterValues = (filterValues) => {
 
   return values;
 };
+
+export const categories = [
+  {
+    id: 1,
+    name: "Buy",
+    queryName: "buy"
+  },
+  {
+    id: 2,
+    name: "Rent",
+    queryName: "rent"
+  }
+];
