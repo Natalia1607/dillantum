@@ -1,0 +1,41 @@
+.user__container {
+    flex-direction: column;
+    gap: 126px;
+    background-color: #E7E4DE;
+    flex: 1;
+    height: calc(100vh - 90px);
+}
+
+.user__container div {
+    text-align: center;
+}
+
+.user__avatar {
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    padding: 50px;
+    background-color: var(--color-bg-variant);
+    border-radius: 50%;
+}
+
+.user__nav li {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.user__nav li:hover {
+    opacity: 0.6;
+}
+
+.user__content {
+    display: flex;
+    flex: 2;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 430px) {
+    .user__container {
+        height: calc(100vh - 105px);
+    }
+}

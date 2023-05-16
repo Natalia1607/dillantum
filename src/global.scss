@@ -182,8 +182,16 @@ input {
     justify-content: flex-end;
 }
 
+.jc-fs {
+    justify-content: flex-start;
+}
+
 .ai-c {
     align-items: center;
+}
+
+.f-wrap {
+    flex-wrap: wrap;
 }
 
 .column {

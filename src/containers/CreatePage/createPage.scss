@@ -3,7 +3,6 @@
     margin-top: 25px;
     padding: 20px;
     width: 60%;
-    min-height: 80vh;
     border: 1px solid var(--color-primary-variant);
 }
 
@@ -45,7 +44,7 @@
 }
 
 .upload__image {
-    min-height: 500px;
+    min-height: 400px;
     border: 1px solid var(--color-primary-variant);
     border-radius: 10%;
 }
@@ -57,4 +56,18 @@
 
 .upload__image .loader__text {
     display: none;
+}
+
+.upload__image label {
+    text-align: center;
+}
+
+.upload__image .icon {
+    width: 28px;
+    height: 28px;
+}
+
+.upload__image input[name="uploadimage"] {
+    width: 0;
+    height: 0;
 }
