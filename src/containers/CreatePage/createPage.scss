@@ -54,7 +54,7 @@
 .upload__image {
     min-height: 400px;
     border: 1px solid var(--color-primary-variant);
-    border-radius: 10%;
+    border-radius: 0.4rem;
 }
 
 .upload__image .loader {
@@ -87,6 +87,7 @@
     padding: 10px 35px;
     font-size: 16px;
     font-family: var(--font-main);
+    border-radius: 0.4rem;
 }
 
 .upload__input input::placeholder, 
@@ -109,6 +110,38 @@
     margin: auto;
     margin-bottom: 12px;
     padding: 0.6rem 5.5rem;
+}
+
+.image-load {
+    max-width: 300px;
+}
+
+.image-load img {
+    width: 100%;
+}
+
+.image-load .btn {
+    border: none;
+    margin-left: 80%;
+}
+
+.message {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 0.4rem;
+}
+
+.message-danger {
+    background-color: rgb(248 113 113);
+    color: rgb(153 27 27);
+}
+
+.message-success {
+    background-color: rgb(52 211 153);
+    color: rgb(6 95 70); 
 }
 
 /* =====media===== */

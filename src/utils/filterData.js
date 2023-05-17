@@ -184,8 +184,8 @@ export const getFilterValues = (filterValues) => {
 export const categories = [
   {
     id: 1,
-    name: "Buy",
-    queryName: "buy"
+    name: "Sell",
+    queryName: "sell"
   },
   {
     id: 2,

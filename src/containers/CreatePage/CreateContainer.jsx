@@ -36,11 +36,12 @@ const CreateContainer = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [imageAsset, setImageAsset] = useState(null);
+
   const [fields, setFields] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [msg, setMsg] = useState(null);
-  const [alertStatus, setAlertStatus] = useState("danger");
-  /* const [{ ad }, dispatch] = useStateValue(); */
+  const [alertStatus, setAlertStatus] = useState("");
+  const dispatch = useStateValue();
 
   const uploadImage = (e) => {
     setIsLoading(true);
@@ -121,10 +122,14 @@ const CreateContainer = () => {
           id: `${Date.now()}`,
           title: title,
           imageURL: imageAsset,
-          category: purpose,
+          purpose: purpose,
           city: city,
-          qty: 1,
-          price: price,
+          address: address,
+          rooms: rooms,
+          baths: baths,
+          size: size,
+          price:price,
+          description: description,
         };
         saveItem(data);
         setIsLoading(false);
@@ -165,10 +170,10 @@ const CreateContainer = () => {
 
   const fetchData = async () => {
     await getAllAds().then((data) => {
-      /* dispatch({
-        type: actionType.SET_ITEMS,
+      dispatch({
+        type: actionType.SET_AD,
         ad: data,
-      }); */
+      });
     });
   };
 
@@ -177,23 +182,23 @@ const CreateContainer = () => {
       <div className="container__upload">
         {fields && (
           <p
-            className={`w-full p-2 rounded-lg text-center text-lg font-semibold ${
-              alertStatus === "danger"
-                ? "bg-red-400 text-red-800"
-                : "bg-emerald-400 text-emerald-800"
+            className={`message ${alertStatus === "danger"
+                ? "message-danger"
+                : "message-success"
             }`}
           >
             {msg}
           </p>
         )}
+
         <div className="upload__input flex">
           <MdOutlineRealEstateAgent className="icon" />
           <input
             type="text"
             required
             value={title}
-            placeholder="Title"
             onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
           />
         </div>
 
@@ -231,7 +236,7 @@ const CreateContainer = () => {
                 </>
               ) : (
                 <>
-                  <div>
+                  <div className="image-load">
                     <img src={imageAsset} alt="upload image" />
                     <button type="button" className="btn" onClick={deleteImage}>
                       <MdDelete className="icon" />
@@ -325,7 +330,6 @@ const CreateContainer = () => {
           <span>*Ads are moderated before being published</span>
         </div>
       </div>
-
       <Footer />
     </div>
   );
