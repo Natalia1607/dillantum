@@ -21,8 +21,8 @@ import {
 import { storage } from "../../config/firebase";
 import { actionType } from "../../context/reducer";
 import { useStateValue } from "../../context/StateProvider";
-import { saveItem, getAllAds } from '../../utils/firebaseFunctions';
-
+import { saveItem, getAllAds } from "../../utils/firebaseFunctions";
+import { Footer } from '../../components';
 import "./createPage.scss";
 
 const CreateContainer = () => {
@@ -40,7 +40,7 @@ const CreateContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [msg, setMsg] = useState(null);
   const [alertStatus, setAlertStatus] = useState("danger");
-  const [{ ad }, dispatch] = useStateValue();
+  /* const [{ ad }, dispatch] = useStateValue(); */
 
   const uploadImage = (e) => {
     setIsLoading(true);
@@ -48,26 +48,29 @@ const CreateContainer = () => {
     const storageRef = ref(storage, `images/${Date.now()}-${imageFile.name}`);
     const uploadTask = uploadBytesResumable(storageRef, imageFile);
 
-    uploadTask.on('state_changed', (snapshot) => {
-      const uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      }, 
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const uploadProgress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      },
       (error) => {
         console.log(error);
         setFields(true);
-        setMsg('Error while uploading : Try Again');
-        setAlertStatus('danger');
+        setMsg("Error while uploading : Try Again");
+        setAlertStatus("danger");
         setTimeout(() => {
           setFields(false);
           setIsLoading(false);
         }, 4000);
-      }, 
+      },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImageAsset(downloadURL);
           setIsLoading(false);
           setFields(true);
           setMsg("Image uploaded successfully");
-          setAlertStatus('success');
+          setAlertStatus("success");
           setTimeout(() => {
             setFields(false);
           }, 4000);
@@ -84,20 +87,31 @@ const CreateContainer = () => {
       setIsLoading(false);
       setFields(true);
       setMsg("Image deleted successfully");
-      setAlertStatus('success');
+      setAlertStatus("success");
       setTimeout(() => {
         setFields(false);
       }, 4000);
-    })
+    });
   };
 
   const saveDetails = () => {
     setIsLoading(true);
     try {
-      if (!title || !purpose || !city || !address || !rooms || !baths || !size || !price || !description || !imageAsset  ) {
+      if (
+        !title ||
+        !purpose ||
+        !city ||
+        !address ||
+        !rooms ||
+        !baths ||
+        !size ||
+        !price ||
+        !description ||
+        !imageAsset
+      ) {
         setFields(true);
         setMsg("Required fields can't be empty");
-        setAlertStatus('danger');
+        setAlertStatus("danger");
         setTimeout(() => {
           setFields(false);
           setIsLoading(false);
@@ -151,17 +165,17 @@ const CreateContainer = () => {
 
   const fetchData = async () => {
     await getAllAds().then((data) => {
-      dispatch({
+      /* dispatch({
         type: actionType.SET_ITEMS,
         ad: data,
-      });
+      }); */
     });
   };
 
   return (
     <div className="container">
       <div className="container__upload">
-      {fields && (
+        {fields && (
           <p
             className={`w-full p-2 rounded-lg text-center text-lg font-semibold ${
               alertStatus === "danger"
@@ -229,81 +243,90 @@ const CreateContainer = () => {
           )}
         </div>
 
-        <div className="flex jc-sb">
-          <div>
-            <MdLocationCity />
-            <input
-              type="text"
-              required
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              placeholder="city"
-            />
-          </div>
-          <div>
-            <HiOutlineLocationMarker />
-            <input
-              type="text"
-              required
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              placeholder="address"
-            />
-          </div>
+        <div className="upload__input">
+          <MdLocationCity className="icon" />
+          <input
+            type="text"
+            required
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="City"
+          />
+        </div>
+        <div className="upload__input">
+          <HiOutlineLocationMarker className="icon" />
+          <input
+            type="text"
+            required
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="Address"
+          />
         </div>
 
-        <div>
-          <div>
-            <RiHotelBedFill />
+        <div className="flex f-wrap">
+          <div className="upload__input">
+            <RiHotelBedFill className="icon" />
             <input
-              type="text"
+              type="number"
               required
               value={rooms}
               onChange={(e) => setRooms(e.target.value)}
-              placeholder="beds"
+              placeholder="Beds"
             />
           </div>
-          <div>
-            <FaBath />
+          <div className="upload__input">
+            <FaBath className="icon" />
             <input
-              type="text"
+              type="number"
               required
               value={baths}
               onChange={(e) => setBaths(e.target.value)}
-              placeholder="baths"
+              placeholder="Baths"
             />
           </div>
-          <div>
-            <MdSpaceDashboard />
+          <div className="upload__input">
+            <MdSpaceDashboard className="icon" />
             <input
               type="text"
               required
               value={size}
               onChange={(e) => setSize(e.target.value)}
-              placeholder="sqft"
+              placeholder="Sqft"
             />
           </div>
-          <div>
-            <MdAttachMoney />
+          <div className="upload__input">
+            <MdAttachMoney className="icon" />
             <input
               type="text"
               required
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              placeholder="price"
+              placeholder="Price"
             />
           </div>
         </div>
 
-        <div>
-          <textarea name="description" id="" cols="30" rows="10" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description"></textarea>
+        <div className="upload__input">
+          <textarea
+            name="description"
+            id=""
+            rows="10"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Description"
+          ></textarea>
         </div>
 
-        <div>
-          <button type="button" className="btn" onClick={saveDetails}>Save</button>
+        <div className="upload__footer">
+          <button type="button" className="btn btn-primary hover-diagonal_light" onClick={saveDetails}>
+            Save
+          </button>
           <span>*Ads are moderated before being published</span>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

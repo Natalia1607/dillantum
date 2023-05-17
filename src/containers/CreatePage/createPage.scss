@@ -1,6 +1,7 @@
 .container__upload {
     margin: auto;
     margin-top: 25px;
+    margin-bottom: 25px;
     padding: 20px;
     width: 60%;
     border: 1px solid var(--color-primary-variant);
@@ -21,7 +22,7 @@
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    width: 24px;
+    width: 24px; 
     height: 24px;
 }
 
@@ -30,7 +31,14 @@
     height: 40px;
     width: 100%;
     background-color: transparent;
+    font-size: 16px;
+    font-family: var(--font-main);
+    color: var(--color-text);
     border-bottom: 1px solid var(--color-primary-variant);
+}
+
+.flex .upload__input {
+    width: max-content;
 }
 
 .container__upload select {
@@ -70,4 +78,73 @@
 .upload__image input[name="uploadimage"] {
     width: 0;
     height: 0;
+}
+
+.upload__input textarea {
+    width: 100%;
+    border: 1px solid var(--color-primary-variant);
+    outline: none;
+    padding: 10px 35px;
+    font-size: 16px;
+    font-family: var(--font-main);
+}
+
+.upload__input input::placeholder, 
+.upload__input textarea::placeholder {
+    font-size: 16px;
+    font-family: var(--font-main);
+}
+
+.upload__footer {
+    text-align: center;
+}
+
+.upload__footer .btn {
+    margin: auto;
+    margin-bottom: 12px;
+    padding: 0.6rem 5.5rem;
+}
+
+.upload__footer .btn {
+    margin: auto;
+    margin-bottom: 12px;
+    padding: 0.6rem 5.5rem;
+}
+
+/* =====media===== */
+
+@media screen and (max-width: 1100px) {
+    .container__upload {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container__upload {
+        width: 80%;
+    }
+
+    .upload__input {
+        width: 100%;
+    }
+
+    .flex .upload__input {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .flex .upload__input {
+        width: 100%;
+    }
+
+    .upload__image {
+        min-height: 290px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .container__upload {
+        width: 95%;
+    }
 }
