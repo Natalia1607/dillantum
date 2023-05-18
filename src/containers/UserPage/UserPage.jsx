@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { CTAMain } from "../MainPage/CTAMain";
-import { RiUser3Fill } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import { Cards } from "../../components";
+import { RiUser3Fill } from "react-icons/ri";
 import { GiArchiveResearch } from "react-icons/gi";
-import { MdFavorite } from "react-icons/md";
 import { IoIosListBox } from "react-icons/io";
+import { MdFavorite, MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import "./userPage.scss";
 
 const MainContainer = () => {
   const location = useLocation();
+  const [nav, setNav] = useState(false);
+  const handleNav = () => setNav(!nav);
   return (
-    <div className="container flex gap">
-      <div className="flex jc-fs ai-c user__container pt48">
+    <div className="container flex">
+      <div className={
+          nav ? "flex jc-fs ai-c user__container pt48 active" : "flex jc-fs ai-c user__container pt48"
+        }>
         <div>
           <Link to={"/personal_account"}>
             <RiUser3Fill className="icon user__avatar mb24" />
@@ -37,6 +41,13 @@ const MainContainer = () => {
             <Link to={"#"}>Personal data</Link>
           </li>
         </ul>
+        <div className="user__panel-close" onClick={handleNav}>   
+          {!nav ? (
+            <MdKeyboardArrowLeft className="icon" size={30}/>
+          ) : (
+            <MdKeyboardArrowRight className="icon" size={30}/>
+          )}
+        </div>
       </div>
       <div className="user__content">
         {location.pathname === "/personal_account" ? <CTAMain /> : <></>}
