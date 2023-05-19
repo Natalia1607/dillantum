@@ -6,8 +6,8 @@ export const filterData = [
       { name: "Monthly", value: "monthly" },
       { name: "Yearly", value: "yearly" },
     ],
-    placeholder: "Rent Frequency",
-    queryName: "rentFrequency",
+    placeholder: "Rent Term",
+    queryName: "rentTerm",
   },
   {
     items: [
@@ -48,8 +48,8 @@ export const filterData = [
     items: [
       { name: "Lowest Price", value: "price-asc" },
       { name: "Highest Price", value: "price-des" },
-      { name: "Newest", value: "date-asc" },
-      { name: "Oldest", value: "date-desc" },
+      { name: "Latest first", value: "date-asc" },
+      { name: "Oldest first", value: "date-des" },
       { name: "Verified", value: "verified-score" },
       { name: "City Level Score", value: "city-level-score" },
     ],
@@ -128,7 +128,7 @@ export const filterData = [
 
 export const getFilterValues = (filterValues) => {
   const {
-    rentFrequency,
+    rentTerm,
     categoryExternalID,
     minPrice,
     maxPrice,
@@ -141,8 +141,8 @@ export const getFilterValues = (filterValues) => {
 
   const values = [
     {
-      name: "rentFrequency",
-      value: rentFrequency,
+      name: "rentTerm",
+      value: rentTerm,
     },
     {
       name: "minPrice",

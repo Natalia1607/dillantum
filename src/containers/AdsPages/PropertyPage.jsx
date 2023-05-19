@@ -12,7 +12,7 @@ const PropertyPage = () => {
   const params = useParams();
   const { propertyId } = params; 
   const { data, isFetching, error } = useGetProperyDetailsQuery(propertyId);
-
+ 
   return (
     <div>
       <section className="container mb48">

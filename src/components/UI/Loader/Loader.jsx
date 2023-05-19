@@ -8,9 +8,9 @@ const Loader = ({ title }) => (
       alt="loader"
       className="loader"
     />
-    <h1 className="loader__text">
+    <h2 className="loader__text">
       {title || "Fetching properties..."}
-    </h1>
+    </h2>
   </div>
 );
 

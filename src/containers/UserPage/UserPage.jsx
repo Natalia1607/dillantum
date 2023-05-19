@@ -5,7 +5,11 @@ import { Cards } from "../../components";
 import { RiUser3Fill } from "react-icons/ri";
 import { GiArchiveResearch } from "react-icons/gi";
 import { IoIosListBox } from "react-icons/io";
-import { MdFavorite, MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
+import {
+  MdFavorite,
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+} from "react-icons/md";
 import "./userPage.scss";
 
 const MainContainer = () => {
@@ -14,9 +18,13 @@ const MainContainer = () => {
   const handleNav = () => setNav(!nav);
   return (
     <div className="container flex">
-      <div className={
-          nav ? "flex jc-fs ai-c user__container pt48 active" : "flex jc-fs ai-c user__container pt48"
-        }>
+      <div
+        className={
+          nav
+            ? "flex jc-fs ai-c user__container pt48 active"
+            : "flex jc-fs ai-c user__container pt48"
+        }
+      >
         <div>
           <Link to={"/personal_account"}>
             <RiUser3Fill className="icon user__avatar mb24" />
@@ -41,11 +49,11 @@ const MainContainer = () => {
             <Link to={"#"}>Personal data</Link>
           </li>
         </ul>
-        <div className="user__panel-close" onClick={handleNav}>   
+        <div className="user__panel-close" onClick={handleNav}>
           {!nav ? (
-            <MdKeyboardArrowLeft className="icon" size={30}/>
+            <MdKeyboardArrowLeft className="icon" size={30} />
           ) : (
-            <MdKeyboardArrowRight className="icon" size={30}/>
+            <MdKeyboardArrowRight className="icon" size={30} />
           )}
         </div>
       </div>
@@ -68,31 +76,31 @@ const MainContainer = () => {
         )}
         {location.pathname === "/personal_account/favorites" ? (
           <div className="mt48 mb48">
-          <h1 className="mb24 flex ai-c gap_6">
-            <MdFavorite className="icon" size={26} />
-            <span>Favorites</span>
-          </h1>
-          <div className="flex f-wrap jc-sb">
-            <Cards />
-            <Cards />
-            <Cards />
+            <h1 className="mb24 flex ai-c gap_6">
+              <MdFavorite className="icon" size={26} />
+              <span>Favorites</span>
+            </h1>
+            <div className="flex f-wrap jc-sb">
+              <Cards />
+              <Cards />
+              <Cards />
+            </div>
           </div>
-        </div>
         ) : (
           <></>
         )}
         {location.pathname === "/personal_account/ads" ? (
           <div className="mt48 mb48">
-          <h1 className="mb24 flex ai-c gap_6">
-            <IoIosListBox className="icon" size={26} />
-            <span>My Ads</span>
-          </h1>
-          <div className="flex f-wrap jc-sb">
-            <Cards />
-            <Cards />
-            <Cards />
+            <h1 className="mb24 flex ai-c gap_6">
+              <IoIosListBox className="icon" size={26} />
+              <span>My Ads</span>
+            </h1>
+            <div className="flex f-wrap jc-sb">
+              <Cards />
+              <Cards />
+              <Cards />
+            </div>
           </div>
-        </div>
         ) : (
           <></>
         )}

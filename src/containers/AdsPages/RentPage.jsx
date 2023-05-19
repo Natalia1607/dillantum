@@ -14,7 +14,7 @@ const Rent = () => {
         <div className="banner">
           <p>Popular searches</p>
           <h2>
-            <Link to={"/rent"}>Rent</Link>
+            <Link to={"/for-rent/property"}>Rent</Link>
           </h2>
         </div>
         <div className="content__container">

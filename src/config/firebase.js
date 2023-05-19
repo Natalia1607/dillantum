@@ -2,9 +2,10 @@ import { initializeApp, getApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
+/* require('dotenv').config(); */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBWCrtCupEITyjIDN6psw1OW9tzXd0FRTA",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "dillantum-realestate-356f3.firebaseapp.com",
   databaseURL: "https://dillantum-realestate-356f3-default-rtdb.firebaseio.com",
   projectId: "dillantum-realestate-356f3",

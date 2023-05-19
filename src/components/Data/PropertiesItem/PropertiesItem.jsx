@@ -27,6 +27,7 @@ const PropertiesItem = ({
   isVerified,
   agency,
   rentType,
+  purpose,
 }) => {
   const location = useLocation();
 
@@ -71,7 +72,7 @@ const PropertiesItem = ({
             </p>
           </div>
         </div>
-        <Link to={`/property/${id}`}>
+        <Link to={`/${purpose}/property/${id}`}>
           <button className="btn card__btn">Book Now</button>
         </Link>
       </div>

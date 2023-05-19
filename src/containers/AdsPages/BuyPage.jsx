@@ -11,32 +11,17 @@ const Buy = () => {
       <div className="container">
         <div className="banner">
           <p>Popular searches</p>
-          <h2>
-            <Link to={"/buy"}>Buy</Link>
-          </h2>
+          <h1>
+            <Link to={"/for-sale/property"}>Buy</Link>
+          </h1>
         </div>
         <div className="content__container">
           <Search />
           <Breadcrumb separator=">" className="breadcrumb">
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-            <Breadcrumb.Item>Property for Buy</Breadcrumb.Item>
+            <Breadcrumb.Item>Property for Sale</Breadcrumb.Item>
           </Breadcrumb>
           <PropertyList />
-          <div className="cards-wrapp">
-            <h3 className="mt24">
-              <a href="#">Our recommendations</a>
-            </h3>
-          </div>
-          <div className="cards-wrapp">
-            <h3>
-              <a href="#">Most viewed</a>
-            </h3>
-          </div>
-          <div className="cards-wrapp">
-            <h3>
-              <a href="#">Most recent</a>
-            </h3>
-          </div>
         </div>
       </div>
       <Footer />

@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
 import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
 
 import { useGetProperyListQuery } from "../../../redux/services/bayut";
@@ -8,7 +9,9 @@ import Error from "../../UI/Error/Error";
 import './propertyList.scss';
 
 const PropertyList = () => {
-  const { data, isFetching, error } = useGetProperyListQuery();
+  const params = useParams();
+  const { purpose } = params; 
+  const { data, isFetching, error } = useGetProperyListQuery(purpose);
   const propertiesData = data?.hits;
 
   const mappedList = propertiesData?.map((property) => {
@@ -27,6 +30,7 @@ const PropertyList = () => {
         coverPhoto={property?.coverPhoto?.url}
         isVerified={property?.isVerified}
         rentType={property?.rentFrequency}
+        purpose={property?.purpose}
       />
     );
   });
