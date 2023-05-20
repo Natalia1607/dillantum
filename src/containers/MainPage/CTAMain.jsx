@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../config/firebase";
+import { auth } from "../../redux/services/firebase";
 
 export const CTAMain = ({ propertyForSale, propertyForRent }) => {
   const [authUser, setAuthUser] = useState(null);
@@ -18,10 +18,10 @@ export const CTAMain = ({ propertyForSale, propertyForRent }) => {
   return (
     <div className="cta-main flex jc-fe ai-c gap">
       <div className="flex jc-sb gap">
-        <Link to={"for-rent/property"} className="btn hover-diagonal">
+        <Link to={"/for-rent/property"} className="btn hover-diagonal">
           Rent
         </Link>
-        <Link to={"for-sale/property"} className="btn hover-diagonal">
+        <Link to={"/for-sale/property"} className="btn hover-diagonal">
           Buy
         </Link>
       </div>

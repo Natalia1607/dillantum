@@ -6,7 +6,6 @@ import Loader from "../../components/UI/Loader/Loader";
 import Error from "../../components/UI/Error/Error";
 
 import { useGetProperyDetailsQuery } from "../../redux/services/bayut";
-import { Footer } from "../../components";
 
 const PropertyPage = () => {
   const params = useParams();
@@ -14,7 +13,7 @@ const PropertyPage = () => {
   const { data, isFetching, error } = useGetProperyDetailsQuery(propertyId);
  
   return (
-    <div>
+    <>
       <section className="container mb48">
         <div>
           {!isFetching && !error && (
@@ -50,8 +49,7 @@ const PropertyPage = () => {
           {!isFetching && data?.length === 0 && <Error />}
         </div>
       </section>
-      <Footer />
-    </div>
+    </>
   );
 };
 

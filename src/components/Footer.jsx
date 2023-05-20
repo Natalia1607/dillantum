@@ -12,7 +12,7 @@ const Footer = () => {
         <a href="mailto:dillantum@gmail.com">
           <IoIosMail className="icon" size={24} />
         </a>
-      </div>
+      </div> 
       <div className="footer__docs">
         <a href="#">Terms and Conditions</a>
         <a href="#">Privacy Policy</a>

@@ -3,7 +3,7 @@ import { Form, Input } from "antd";
 
 import Key from "../../assets/key.jpg";
 
-import { auth, app } from "../../config/firebase";
+import { auth, app } from "../../redux/services/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useStateValue } from "../../context/StateProvider";

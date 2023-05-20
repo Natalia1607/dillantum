@@ -41,7 +41,7 @@ const PropertyDetailItems = ({
     <div className="property__container pt24" key={id}>
       <Breadcrumb separator=">" className="breadcrumb mb24">
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="/rent">{purpose}</Breadcrumb.Item>
+        <Breadcrumb.Item href="/for-rent/property">{purpose}</Breadcrumb.Item>
         <Breadcrumb.Item>{title}</Breadcrumb.Item>
       </Breadcrumb>
       <div className="property__image mb12">

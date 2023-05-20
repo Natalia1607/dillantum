@@ -7,8 +7,8 @@ const options = {
     maxResults: 50,
   }, 
   headers: {
-    'X-RapidAPI-Key': 'db5881c0ddmshc3a33b61c0fdf36p119379jsn2b45c9900b22',
-    'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
+    'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+    'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST,
   },
 };
 

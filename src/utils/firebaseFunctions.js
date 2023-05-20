@@ -6,7 +6,7 @@ import {
   query,
   setDoc,
 } from "firebase/firestore";
-import { firestore } from "../config/firebase";
+import { firestore } from "../redux/services/firebase";
 
 //Saving new item
 export const saveItem = async (data) => {

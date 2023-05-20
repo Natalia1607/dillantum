@@ -6,7 +6,7 @@ import "./AuthPage.scss";
 
 import Table from "../../assets/reg.jpg";
 
-import { auth } from "../../config/firebase";
+import { auth } from "../../redux/services/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import { onAuthStateChanged } from "firebase/auth";

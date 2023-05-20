@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Breadcrumb, Select, Space, } from 'antd';
+import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
 import Cards from '../card/Card';
 import Search from '../Search/Search';
-import Footer from '../Footer';
 import './tabsStyles.scss'; 
 
 const handleChange = (value) => {
@@ -30,7 +29,7 @@ const Tabs = () => {
                     <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                        <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
+                        <Breadcrumb.Item href='/for-rent/property'>Property for Rent</Breadcrumb.Item>
                         <Breadcrumb.Item>Short Term (Daily)</Breadcrumb.Item>
                     </Breadcrumb>
                     <Cards /> 
@@ -41,7 +40,7 @@ const Tabs = () => {
                     <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                        <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
+                        <Breadcrumb.Item href='/for-rent/property'>Property for Rent</Breadcrumb.Item>
                         <Breadcrumb.Item>Short Term (Monthly)</Breadcrumb.Item>
                     </Breadcrumb>
                     <Cards /> 
@@ -52,7 +51,7 @@ const Tabs = () => {
                     <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                        <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
+                        <Breadcrumb.Item href='/for-rent/property'>Property for Rent</Breadcrumb.Item>
                         <Breadcrumb.Item>Long Term (Yearly)</Breadcrumb.Item>
                     </Breadcrumb>
                     <Cards /> 
@@ -63,7 +62,7 @@ const Tabs = () => {
                     <Search />
                     <Breadcrumb separator=">" className='breadcrumb mb24'>
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                        <Breadcrumb.Item href='/rent'>Property for Rent</Breadcrumb.Item>
+                        <Breadcrumb.Item href='/for-rent/property'>Property for Rent</Breadcrumb.Item>
                         <Breadcrumb.Item>Commercial for Rent</Breadcrumb.Item>
                     </Breadcrumb>
                     <Cards /> 

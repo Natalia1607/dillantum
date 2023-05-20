@@ -18,11 +18,10 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-import { storage } from "../../config/firebase";
+import { storage } from "../../redux/services/firebase";
 import { actionType } from "../../context/reducer";
 import { useStateValue } from "../../context/StateProvider";
 import { saveItem, getAllAds } from "../../utils/firebaseFunctions";
-import { Footer } from '../../components';
 import "./createPage.scss";
 
 const CreateContainer = () => {
@@ -330,7 +329,6 @@ const CreateContainer = () => {
           <span>*Ads are moderated before being published</span>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

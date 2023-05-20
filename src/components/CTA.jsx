@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { auth } from "../redux/services/firebase";
 
 import { RiMenu3Fill, RiCloseFill, RiUser3Fill } from "react-icons/ri";
 import { MdAdd, MdLogout } from "react-icons/md";
