@@ -15,7 +15,6 @@ const PropertyDetailItems = ({
   id,
   coverPhoto,
   photos, 
-  floorPlan,
   title,
   city,
   address,
@@ -33,15 +32,13 @@ const PropertyDetailItems = ({
   logo,
   type,
   purpose,
-  geoLat,
-  geoLng,
   furnishing,
 }) => {
   return (
     <div className="property__container pt24" key={id}>
       <Breadcrumb separator=">" className="breadcrumb mb24">
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="/for-rent/property">{purpose}</Breadcrumb.Item>
+        <Breadcrumb.Item href="/for-rent/property">Property {purpose}</Breadcrumb.Item>
         <Breadcrumb.Item>{title}</Breadcrumb.Item>
       </Breadcrumb>
       <div className="property__image mb12">

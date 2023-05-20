@@ -123,18 +123,18 @@ const CTA = () => {
           <li>
             <Link to={"/"}>Home</Link>
           </li>
-          {location.pathname !== "/rent" ? (
+          {location.pathname !== "/for-rent/property" ? (
             <li>
-              <Link to={"/rent"}>Property for Rent</Link>
+              <Link to={"/for-rent/property"}>Property for Rent</Link>
             </li>
           ) : (
             <Link to={"#"} className="none">
               <li></li>
             </Link>
           )}
-          {location.pathname !== "/buy" ? (
+          {location.pathname !== "/for-sale/property" ? (
             <li>
-              <Link to={"/buy"}>Property for Buy</Link>
+              <Link to={"/for-sale/property"}>Property for Buy</Link>
             </li>
           ) : (
             <Link to={"#"} className="none">
