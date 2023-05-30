@@ -74,12 +74,12 @@ const SignInContainer = () => {
   };
 
   return (
-    <div className="container form__container grid">
-      <div className="form__bg md-flex">
+    <div className="auth__container container grid">
+      <div className="auth__container_bg md-flex">
         <img src={Key} alt="key" />
       </div>
       {!authUser ? (
-        <div className="form__right sign__right">
+        <div className="auth__container_right sign__right">
           <h2 className="mb36">Sign in</h2> {/* Login In to your Account */}
           <button
             className="btn flex ai-c gap_6 mb24"
@@ -101,9 +101,8 @@ const SignInContainer = () => {
             action="#"
             name="nest-messages"
             layout="vertical"
-            className="form form__opacity"
+            className="auth__container_form form__opacity"
             id="form__opacity"
-            /* onFinish={signIn} */
           >
             <Form.Item
               name={["user", "email"]}
@@ -152,7 +151,7 @@ const SignInContainer = () => {
           </Form>
         </div>
       ) : (
-        <div className="result">
+        <div className="auth__container_result">
           <Result
             status="success"
             title={`You are logged in as ${name}`}

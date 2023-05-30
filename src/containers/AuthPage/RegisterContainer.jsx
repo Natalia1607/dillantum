@@ -40,30 +40,30 @@ const RegisterContainer = () => {
       });
   };
   return (
-    <div className="form__container container grid">
-      <div className="form__bg md-flex">
+    <div className="auth__container container grid">
+      <div className="auth__container_bg md-flex">
         <img src={Table} alt="" />
       </div>
       {!authUser ? (
-        <div className="form__right register__right">
+        <div className="auth__container_right register__right">
           <p>
             Already a member?{" "}
-            <Link to={"/sign-in"} className="register__link">
+            <Link to={"/sign-in"} className="auth__container_link">
               Sign In
             </Link>
           </p>
           <h2 className="mb36">Create an account</h2> {/* Register */}
-          <div className="form__data register__data flex jc-sb gap">
+          <div className="flex jc-sb gap">
             <Form
               action="#"
               name="nest-messages"
               layout="vertical"
-              className="form"
+              className="auth__container_form"
             >
               <Form.Item
                 name={["user", "name"]}
                 label="Name"
-                className="item__input"
+                className="auth__container_input"
                 autoFocus={true}
                 rules={[
                   {
@@ -75,9 +75,8 @@ const RegisterContainer = () => {
                 <Input autoFocus={true} />
               </Form.Item>
               <Form.Item
-                /* name={['user', 'email']} */
                 label="E-mail"
-                className="item__input"
+                className="auth__container_input"
                 type="email"
                 rules={[
                   {
@@ -98,7 +97,7 @@ const RegisterContainer = () => {
               <Form.Item
                 label="Password"
                 name="password"
-                className="item__input"
+                className="auth__container_input"
                 rules={[
                   {
                     required: true,
@@ -114,17 +113,17 @@ const RegisterContainer = () => {
               <Form.Item name="policy" valuePropName="checked">
                 <Checkbox>
                   Creating an account means you agree to our{" "}
-                  <a href="#" className="register__link">
+                  <a href="#" className="auth__container_link">
                     {" "}
                     Terms of Service
                   </a>
                   ,{" "}
-                  <a href="#" className="register__link">
+                  <a href="#" className="auth__container_link">
                     {" "}
                     Privacy Policy
                   </a>
                   , and our default{" "}
-                  <a href="#" className="register__link">
+                  <a href="#" className="auth__container_link">
                     {" "}
                     Notification Settings
                   </a>
@@ -142,7 +141,7 @@ const RegisterContainer = () => {
           </div>
         </div>
       ) : (
-        <div className="result">
+        <div className="auth__container_result">
           <Result
             status="success"
             title="Successful registration"
@@ -158,7 +157,7 @@ const RegisterContainer = () => {
           </div>
           <p>
             Change account.{" "}
-            <Link to={"/sign-in"} className="register__link">
+            <Link to={"/sign-in"} className="auth__container_link">
               Sign In
             </Link>
           </p>

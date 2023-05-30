@@ -1,150 +1,150 @@
-.card__wrapp {
+.card {
+  &__wrapp {
     position: relative;
     width: 348px;
     height: 493px;
     background: var(--color-white);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 
-.card__favourite {
+  &__favourite {
     position: absolute;
     top: 12px;
     right: 12px;
     color: var(--color-white);
-}
+  }
 
-.card__img {
+  &__img {
     width: 100%;
     height: 208px;
-}
+  }
 
-.card__data {
+  &__data {
     position: relative;
     padding: 24px;
     font-weight: 200;
     line-height: 130%;
-}
 
-.card__data h4 {
-    font-size: 23px;
-}
+    h4 {
+      font-size: 23px;
+    }
 
-.card__data p {
-    margin-bottom: 12px;
-    font-size: 14px;
-}
+    p {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
 
-.card__data .card__data_price {
-    margin-bottom: 36px;
-    font-size: 18px;
-    font-weight: 500;
-}
+    &_price {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
 
-.card__icons {
+  &__icons {
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
-}
 
-.card__icons > div {
-    text-align: center;
-}
+    div {
+      text-align: center;
+    }
 
-.card__icons p {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 130%;
-}
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+    }
 
-.card__icons span {
-    font-weight: 300;
-    font-size: 14px;
-}
+    span {
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
 
-.card__agency {
+  &__agency {
     width: 68px;
     position: absolute;
     right: 10px;
     top: 8px;
+  }
 }
 
 /* AddContainer */
 .form__ad-item {
-    display: none;
+  display: none;
 }
 
 /* mobile */
 @media screen and (max-width: 1200px) {
-    .cards {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 24px 36px;
-    }
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 36px;
+  }
 }
 
 @media screen and (max-width: 880px) {
-    .cards {
-        gap: 24px 12px;
-    }
+  .cards {
+    gap: 24px 12px;
+  }
 }
 
 @media screen and (max-width: 800px) {
-    .cards,
-    .card__wrapp {
-        width: 100%;
-    }
+  .card,
+  .card__wrapp {
+    width: 100%;
+  }
 
-    .card__wrapp {
-        display: flex;
-        gap: 24px;
-        height: auto;
-    }
+  .card__wrapp {
+    display: flex;
+    gap: 24px;
+    height: auto;
+  }
 
-    .card__img {
-        width: 300px;
-        height: auto;
-    }
+  .card__img {
+    width: 300px;
+    height: auto;
+  }
 
-    .card__data {
-        width: 100%;
-    }
+  .card__data {
+    width: 100%;
+  }
 }
 
 .card__active {
-    position: absolute;
-    top: 12px;
-    left: 12px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 
 .card__btn {
-    margin: auto;
+  margin: auto;
 }
 
 .card__btn:hover {
-    color: var(--color-text);
+  color: var(--color-text);
 }
 
 @media screen and (max-width: 680px) {
-    .card__wrapp {
-        display: block;
-        width: 440px;
-    }
+  .card__wrapp {
+    display: block;
+    width: 440px;
+  }
 
-    
-    .cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
 
-    .card__img {
-        width: 100%;
-        height: auto;
-    }
+  .card__img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 530px) {
-    .card__wrapp {
-        width: 100%;
-    }
+  .card__wrapp {
+    width: 100%;
+  }
 }

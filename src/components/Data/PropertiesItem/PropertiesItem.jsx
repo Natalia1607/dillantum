@@ -7,7 +7,7 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { GoVerified } from "react-icons/go";
-
+ 
 import { useLocation } from "react-router-dom";
 
 import millify from 'millify';
@@ -32,7 +32,7 @@ const PropertiesItem = ({
   const location = useLocation();
 
   return (
-    <li className="card__wrapp">
+    <li className="card card__wrapp">
         <p className="card__active">{isVerified && <GoVerified className="icon"/>}</p>
         <img className="card__img" src={coverPhoto} alt="real-estate" />
         {location.pathname === "/personal_account/favorites" ? (

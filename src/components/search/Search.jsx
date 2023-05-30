@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import PropertiesItem from "../Data/PropertiesItem/PropertiesItem";
+import React from "react";
 import { Input } from "antd";
-import { useGetServerSidePropsQuery } from "../../redux/services/bayut";
 import { BsFilter } from "react-icons/bs";
 
 import "./searchStyles.scss";

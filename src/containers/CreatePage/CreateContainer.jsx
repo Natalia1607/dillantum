@@ -4,7 +4,7 @@ import {
   MdCloudUpload,
   MdDelete,
   MdLocationCity,
-  MdAttachMoney,
+  MdAttachMoney, 
   MdSpaceDashboard,
 } from "react-icons/md";
 import { RiHotelBedFill } from "react-icons/ri";
@@ -178,7 +178,7 @@ const CreateContainer = () => {
 
   return (
     <div className="container">
-      <div className="container__upload">
+      <div className="upload__container">
         {fields && (
           <p
             className={`message ${alertStatus === "danger"
@@ -190,7 +190,7 @@ const CreateContainer = () => {
           </p>
         )}
 
-        <div className="upload__input flex">
+        <div className="upload__container_input flex">
           <MdOutlineRealEstateAgent className="icon" />
           <input
             type="text"
@@ -201,7 +201,7 @@ const CreateContainer = () => {
           />
         </div>
 
-        <div className="upload__input">
+        <div className="upload__container_input">
           <select name="" id="" onChange={(e) => setPurpose(e.target.value)}>
             <option value="other">Select purpose</option>
             {categories &&
@@ -213,7 +213,7 @@ const CreateContainer = () => {
           </select>
         </div>
 
-        <div className="upload__image flex ai-c jc-c">
+        <div className="upload__container_image flex ai-c jc-c">
           {isLoading ? (
             <Loader />
           ) : (
@@ -247,7 +247,7 @@ const CreateContainer = () => {
           )}
         </div>
 
-        <div className="upload__input">
+        <div className="upload__container_input">
           <MdLocationCity className="icon" />
           <input
             type="text"
@@ -257,7 +257,7 @@ const CreateContainer = () => {
             placeholder="City"
           />
         </div>
-        <div className="upload__input">
+        <div className="upload__container_input">
           <HiOutlineLocationMarker className="icon" />
           <input
             type="text"
@@ -269,7 +269,7 @@ const CreateContainer = () => {
         </div>
 
         <div className="flex f-wrap">
-          <div className="upload__input">
+          <div className="upload__container_input">
             <RiHotelBedFill className="icon" />
             <input
               type="number"
@@ -279,7 +279,7 @@ const CreateContainer = () => {
               placeholder="Beds"
             />
           </div>
-          <div className="upload__input">
+          <div className="upload__container_input">
             <FaBath className="icon" />
             <input
               type="number"
@@ -289,7 +289,7 @@ const CreateContainer = () => {
               placeholder="Baths"
             />
           </div>
-          <div className="upload__input">
+          <div className="upload__container_input">
             <MdSpaceDashboard className="icon" />
             <input
               type="text"
@@ -299,7 +299,7 @@ const CreateContainer = () => {
               placeholder="Sqft"
             />
           </div>
-          <div className="upload__input">
+          <div className="upload__container_input">
             <MdAttachMoney className="icon" />
             <input
               type="text"
@@ -311,7 +311,7 @@ const CreateContainer = () => {
           </div>
         </div>
 
-        <div className="upload__input">
+        <div className="upload__container_input">
           <textarea
             name="description"
             id=""
@@ -322,7 +322,7 @@ const CreateContainer = () => {
           ></textarea>
         </div>
 
-        <div className="upload__footer">
+        <div className="upload__container_input_footer">
           <button type="button" className="btn btn-primary hover-diagonal_light" onClick={saveDetails}>
             Save
           </button>

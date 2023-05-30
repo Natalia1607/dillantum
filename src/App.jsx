@@ -7,8 +7,8 @@ import {
   SignInContainer,
   CreateContainer,
   PropertiesPage,
-  UserPage,
   PropertyCardPage,
+  UserPage,
 } from "./containers";
 import { useLocation } from "react-router-dom";
 

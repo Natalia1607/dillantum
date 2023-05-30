@@ -1,7 +1,7 @@
 import React from "react";
 import "./cardStyles.scss";
 import { useLocation } from "react-router-dom";
-
+ 
 import Card from "../../assets/card.jpg";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
@@ -9,7 +9,7 @@ import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 const Cards = () => {
   const location = useLocation();
   return (
-    <div className="cards flex jc-sb mb24">
+    <div className="card flex jc-sb mb24">
       <div className="card__wrapp">
         <img className="card__img" src={Card} alt="" />
         {location.pathname === "/personal_account/favorites" ? (

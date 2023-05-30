@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { filterData, getFilterValues } from "../../../utils/filterData";
 import { Select } from 'antd';
 
