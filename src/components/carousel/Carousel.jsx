@@ -8,9 +8,9 @@ import slide5 from "../../assets/slide5.jpg";
 import slide6 from "../../assets/slide6.jpg";
 import Slider from "react-slick";
 
-import "./imgCarouselStyles.scss";
+import "./CarouselStyles.scss";
 
-const ImgCarousel = () => {
+const Carousel = () => {
   const settings = {
     arrows: false,
     dots: false,
@@ -54,4 +54,4 @@ const ImgCarousel = () => {
   );
 };
 
-export default ImgCarousel;
+export default Carousel;

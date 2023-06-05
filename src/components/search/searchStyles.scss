@@ -1,6 +1,10 @@
 .filter__container {
   padding: 0px;
   padding: 24px 0;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 8px;
+  }
 }
 
 .filter {
@@ -9,18 +13,34 @@
   justify-content: center;
   align-items: flex-end;
   gap: 24px;
-}
 
-.filter input:active,
-.filter input:focus {
-  width: 380px;
-}
+  input:active,
+  input:focus {
+    width: 380px;
 
-.filter__icon {
-  position: absolute;
-  top: 50%;
-  right: 11px;
-  transform: translateY(-50%);
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    transform: translateY(-50%);
+  }
+
+  &__none {
+    display: none;
+  }
+
+  &__none.display {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
 }
 
 .ant-select-selection-item,
@@ -35,33 +55,4 @@
 
 .search-filters {
   flex-wrap: wrap;
-}
-
-.filter__none {
-  display: none;
-}
-
-.filter__none.display {
-  display: block;
-}
-
-/* mobile */
-@media screen and (max-width: 768px) {
-  .filter {
-    width: 80%;
-  }
-
-  .filter input:active,
-  .filter input:focus {
-    width: 90%;
-  }
-
-  .block-tabs.md-hidden {
-    display: flex;
-    justify-content: center;
-  }
-
-  .filter__container {
-    padding-top: 8px;
-  }
 }

@@ -1,0 +1,59 @@
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  &__item-r {
+    margin-top: 30px;
+  }
+
+  &__img {
+    margin-bottom: 30px;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      & img {
+        width: 210px;
+      }
+    }
+  }
+
+  &__item {
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .slick-list {
+    height: auto !important;
+  }
+}
+
+

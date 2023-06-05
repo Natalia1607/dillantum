@@ -2,16 +2,16 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
 
-import { useGetPropertyListQuery } from "../../../redux/services/bayut";
+import { useGetTabListQuery } from "../../../redux/services/bayut";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 
-import './propertyListStyles.scss';
+import './tabsListStyles.scss';
 
-const PropertyList = () => { 
+const TabsList = () => { 
   const params = useParams();
-  const { purpose } = params; 
-  const { data, isFetching, error } = useGetPropertyListQuery(purpose);
+  const { rentType } = params; 
+  const { data, isFetching, error } = useGetTabListQuery(rentType);
   const propertiesData = data?.hits;
 
   const mappedList = propertiesData?.map((property) => {
@@ -46,4 +46,4 @@ const PropertyList = () => {
   );
 };
 
-export default PropertyList;
+export default TabsList;

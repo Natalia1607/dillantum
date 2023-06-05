@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CTAMain } from "../MainPage/CTAMain";
 import { Link, useLocation } from "react-router-dom";
-import { Cards } from "../../components";
 import { RiUser3Fill } from "react-icons/ri";
 import { GiArchiveResearch } from "react-icons/gi";
 import { IoIosListBox } from "react-icons/io";
@@ -66,9 +65,7 @@ const MainContainer = () => {
               <span>My Searches</span>
             </h1>
             <div className="flex f-wrap jc-sb">
-              <Cards />
-              <Cards />
-              <Cards />
+              
             </div>
           </div>
         ) : (
@@ -81,9 +78,7 @@ const MainContainer = () => {
               <span>Favorites</span>
             </h1>
             <div className="flex f-wrap jc-sb">
-              <Cards />
-              <Cards />
-              <Cards />
+              
             </div>
           </div>
         ) : (
@@ -96,9 +91,7 @@ const MainContainer = () => {
               <span>My Ads</span>
             </h1>
             <div className="flex f-wrap jc-sb">
-              <Cards />
-              <Cards />
-              <Cards />
+              
             </div>
           </div>
         ) : (

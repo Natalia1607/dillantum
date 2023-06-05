@@ -1,9 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Breadcrumb } from "antd";
-import { Tabs, Search } from "../../components";
+import { Tabs, Search, PropertyList } from "../../components";
 import "./page.scss";
-import PropertyList from "../../components/Layout/PropertyList/PropertyList";
 
 const Rent = () => {
   const location = useLocation();
@@ -22,26 +21,24 @@ const Rent = () => {
           </h2>
         </div>
         <div className="content__container">
-          {location.pathname === "/for-rent/property" && (
+          {location.pathname !== "/for-sale/property" && (
             <>
               <Tabs />
-              <div>
-                <Search />
-                <Breadcrumb separator=">" className="breadcrumb">
-                  <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                  <Breadcrumb.Item>Property for Rent</Breadcrumb.Item>
-                </Breadcrumb>
-              </div>
+              <Search />
+              <Breadcrumb separator=">" className="breadcrumb">
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item>Property for Rent</Breadcrumb.Item>
+              </Breadcrumb>
             </>
           )}
           {location.pathname === "/for-sale/property" && (
-            <div>
+            <>
               <Search />
               <Breadcrumb separator=">" className="breadcrumb">
                 <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                 <Breadcrumb.Item>Property for Buy</Breadcrumb.Item>
               </Breadcrumb>
-            </div>
+            </>
           )}
           <PropertyList />
         </div>

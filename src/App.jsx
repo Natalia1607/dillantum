@@ -17,20 +17,19 @@ const App = () => {
   return (
     <div>
       <Header />
-      <main> 
+      <main>
         <Routes>
           <Route path="/" element={<MainContainer />} />
           <Route path="/register" element={<RegisterContainer />} />
           <Route path="/sign-in" element={<SignInContainer />} />
-          <Route path="/:purpose/property" element={<PropertiesPage />}>
-            {/* <Route path="/for-rent/rent-daily" element={<RentPage />} />
-            <Route path="/for-rent/rent-monthly" element={<RentPage />} />
-            <Route path="/for-rent/rent-yearly" element={<RentPage />} />
-            <Route path="/for-rent/rent-commercial" element={<RentPage />} /> */}
-          </Route>
+          <Route path="/:purpose/property" element={<PropertiesPage />}></Route>
           <Route
             path="/:purpose/property/:propertyId"
             element={<PropertyCardPage />}
+          />
+          <Route
+            path="/:purpose/property/:rentType"
+            element={<PropertiesPage />}
           />
           <Route path="/createItem" element={<CreateContainer />} />
           <Route path="/personal_account" element={<UserPage />}>
