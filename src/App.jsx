@@ -28,7 +28,7 @@ const App = () => {
             element={<PropertyCardPage />}
           />
           <Route
-            path="/:purpose/property/:rentType"
+            path="/:purpose/property/:rentFrequency"
             element={<PropertiesPage />}
           />
           <Route path="/createItem" element={<CreateContainer />} />

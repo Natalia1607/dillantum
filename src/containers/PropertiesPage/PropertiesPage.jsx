@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Breadcrumb } from "antd";
-import { Tabs, Search, PropertyList } from "../../components";
+import { Tabs, Search, PropertyList, TabsList } from "../../components";
 import "./page.scss";
 
 const Rent = () => {
@@ -40,8 +40,9 @@ const Rent = () => {
               </Breadcrumb>
             </>
           )}
+          <TabsList />
           <PropertyList />
-        </div>
+        </div> 
       </div>
     </div>
   );

@@ -5,6 +5,22 @@
     height: 493px;
     background: var(--color-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      display: flex;
+      gap: 24px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 680px) {
+      display: block;
+      width: 440px;
+    }
+
+    @media screen and (max-width: 530px) {
+      width: 100%;
+    }
   }
 
   &__favourite {
@@ -17,6 +33,16 @@
   &__img {
     width: 100%;
     height: 208px;
+
+    @media screen and (max-width: 800px) {
+      width: 300px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 680px) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__data {
@@ -37,6 +63,10 @@
     &_price {
       font-size: 18px;
       font-weight: 500;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
     }
   }
 
@@ -67,84 +97,27 @@
     right: 10px;
     top: 8px;
   }
+
+  &__active {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+
+  &__btn {
+    margin: auto;
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 }
 
 /* AddContainer */
 .form__ad-item {
   display: none;
-}
-
-/* mobile */
-@media screen and (max-width: 1200px) {
-  .cards {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px 36px;
-  }
-}
-
-@media screen and (max-width: 880px) {
-  .cards {
-    gap: 24px 12px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .card,
-  .card__wrapp {
-    width: 100%;
-  }
-
-  .card__wrapp {
-    display: flex;
-    gap: 24px;
-    height: auto;
-  }
-
-  .card__img {
-    width: 300px;
-    height: auto;
-  }
-
-  .card__data {
-    width: 100%;
-  }
-}
-
-.card__active {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-}
-
-.card__btn {
-  margin: auto;
-}
-
-.card__btn:hover {
-  color: var(--color-text);
-}
-
-@media screen and (max-width: 680px) {
-  .card__wrapp {
-    display: block;
-    width: 440px;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .card__img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 530px) {
-  .card__wrapp {
-    width: 100%;
-  }
 }

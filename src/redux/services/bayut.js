@@ -8,7 +8,7 @@ export const bayutApi = createApi({
       headers.set(
         "X-RapidAPI-Key",
         process.env.REACT_APP_RAPID_API_KEY
-      );
+      ); 
       return headers;
     }, 
   }),

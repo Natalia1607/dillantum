@@ -14,6 +14,7 @@ const Tabs = () => {
     <>
         <div className='tabs__container md-flex'>
             <div className="tabs__container_block flex jc-c">
+            {/* to={`/${purpose}/property/${id}`} */}
                 <Link to={'/for-rent/property/daily'} className={toggleState === 2 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>Short Term (Daily)</Link>
                 <Link to={'/for-rent/property/weekly'} className={toggleState === 3 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(3)}>Short Term (Monthly)</Link>
                 <Link to={'/for-rent/property/monthly'} className={toggleState === 4 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(4)}>Long Term (Yearly)</Link>
@@ -49,8 +50,7 @@ const Tabs = () => {
                         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                         <Breadcrumb.Item href='/for-rent/property'>Property for Rent</Breadcrumb.Item>
                         <Breadcrumb.Item>Commercial for Rent</Breadcrumb.Item>
-                    </Breadcrumb>
-                    
+                    </Breadcrumb>     
                 </div>
             </div>
         </div>

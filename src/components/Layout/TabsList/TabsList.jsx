@@ -1,23 +1,24 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
-
 import { useGetTabListQuery } from "../../../redux/services/bayut";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 
-import './tabsListStyles.scss';
+import "./tabsListStyles.scss";
 
-const TabsList = () => { 
+const TabsList = () => {
   const params = useParams();
-  const { rentType } = params; 
-  const { data, isFetching, error } = useGetTabListQuery(rentType);
+  const { rentFrequency } = params;
+  const { data, isFetching, error } = useGetTabListQuery(rentFrequency);
   const propertiesData = data?.hits;
 
   const mappedList = propertiesData?.map((property) => {
     return (
+      <>
+      <Link to={`/for-rent/property/${property?.rentFrequency}`}>Short Term ({`${property?.rentFrequency}`})</Link>
       <PropertiesItem
-        key={property?.externalID} 
+        key={property?.externalID}
         id={property?.externalID}
         rooms={property?.rooms}
         baths={property?.baths}
@@ -32,17 +33,18 @@ const TabsList = () => {
         rentType={property?.rentFrequency}
         purpose={property?.purpose}
       />
+      </>
     );
   });
 
   return (
-      <section>
-          <ul className="propery-list flex gap">
-            {isFetching && <Loader />}
-            {!isFetching && !error && mappedList}
-            {!isFetching && mappedList?.length === 0 && <Error />}
-          </ul>
-      </section>
+    <section>
+      <ul className="propery-list flex gap">
+        {isFetching && <Loader />}
+        {!isFetching && !error && mappedList}
+        {!isFetching && mappedList?.length === 0 && <Error />}
+      </ul>
+    </section>
   );
 };
 

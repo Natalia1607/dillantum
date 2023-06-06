@@ -1,14 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
-
 import { useGetPropertyListQuery } from "../../../redux/services/bayut";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 
 import './propertyListStyles.scss';
 
-const PropertyList = () => { 
+const PropertyList = () => {  
   const params = useParams();
   const { purpose } = params; 
   const { data, isFetching, error } = useGetPropertyListQuery(purpose);

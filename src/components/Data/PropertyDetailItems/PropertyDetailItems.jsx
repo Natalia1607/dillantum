@@ -35,7 +35,7 @@ const PropertyDetailItems = ({
   furnishing,
 }) => {
   return (
-    <div className="property__container pt24" key={id}>
+    <div className="property__container property pt24" key={id}>
       <Breadcrumb separator=">" className="breadcrumb mb24">
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item href="/for-rent/property">Property {purpose}</Breadcrumb.Item>
@@ -131,7 +131,7 @@ const PropertyDetailItems = ({
         <h3 className="property__title mb12">
           Broker's Details / Agency (вынесла бы в сайдбар справа)
         </h3>
-        <div className="flex gap">
+        <div className="agency flex gap">
           <div className="agency__logo">
             <img src={logo} alt="real-estate" className="" />
           </div>
