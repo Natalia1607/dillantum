@@ -7,7 +7,7 @@ import { IoIosListBox } from "react-icons/io";
 import {
   MdFavorite,
   MdKeyboardArrowLeft,
-  MdKeyboardArrowRight,
+  MdKeyboardArrowRight, 
 } from "react-icons/md";
 import "./userPage.scss";
 
@@ -16,7 +16,7 @@ const MainContainer = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => setNav(!nav);
   return (
-    <div className="container flex">
+    <div className="user container flex">
       <div
         className={
           nav

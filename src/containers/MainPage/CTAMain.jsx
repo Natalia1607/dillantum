@@ -16,7 +16,7 @@ export const CTAMain = ({ propertyForSale, propertyForRent }) => {
     });
   }, []);
   return (
-    <div className="cta-main flex jc-fe ai-c gap">
+    <div className="main__cta flex jc-fe ai-c gap">
       <div className="flex jc-sb gap">
         <Link to={"/for-rent/property"} className="btn hover-diagonal">
           Rent 

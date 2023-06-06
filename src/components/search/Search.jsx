@@ -8,7 +8,7 @@ import { BiSearch } from 'react-icons/bi';
 
 const handleChange = (value) => {
   console.log(`selected ${value}`);
-};
+}; 
 
 const Search = () => {
   const appearance = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Breadcrumb } from "antd";
 import { Tabs, Search, PropertyList, TabsList } from "../../components";
-import "./page.scss";
+import "./propertiesPage.scss";
 
 const Rent = () => {
   const location = useLocation();

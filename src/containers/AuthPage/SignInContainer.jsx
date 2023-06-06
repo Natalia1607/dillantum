@@ -16,7 +16,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Result } from "antd";
 import { Link } from "react-router-dom";
 
-import "./AuthPage.scss";
+import "./authPage.scss";
 
 const button = {
   width: 265,

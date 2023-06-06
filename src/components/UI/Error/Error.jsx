@@ -1,5 +1,4 @@
 import React from "react";
-import './error.scss';
 
 const Error = () => (
   <div className="w-full flex justify-center items-center">

@@ -2,11 +2,11 @@ import loader from "../../../assets/spinner.gif";
 import './loader.scss';
 
 const Loader = ({ title }) => (
-  <div className="loader__wrap">
+  <div className="loader">
     <img
       src={loader}
       alt="loader"
-      className="loader"
+      className="loader__img"
     />
     <h2 className="loader__text">
       {title || "Fetching properties..."}

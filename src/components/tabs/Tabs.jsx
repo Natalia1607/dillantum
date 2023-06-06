@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
 import TabsList from '../Layout/TabsList/TabsList';
-import './TabsStyles.scss'; 
+import './tabsStyles.scss'; 
 
 const Tabs = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -10,7 +10,7 @@ const Tabs = () => {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-  return (
+  return ( 
     <>
         <div className='tabs__container md-flex'>
             <div className="tabs__container_block flex jc-c">

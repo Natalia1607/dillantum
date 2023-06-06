@@ -5,41 +5,41 @@
   @media screen and (max-width: 768px) {
     padding-top: 8px;
   }
-}
 
-.filter {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 24px;
+  .filter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 24px;
 
-  input:active,
-  input:focus {
-    width: 380px;
+    input:active,
+    input:focus {
+      width: 380px;
+
+      @media screen and (max-width: 768px) {
+        width: 90%;
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      transform: translateY(-50%);
+    }
+
+    &__none {
+      display: none;
+    }
+
+    &__none.display {
+      display: block;
+    }
 
     @media screen and (max-width: 768px) {
-      width: 90%;
+      width: 80%;
     }
-  }
-
-  &__icon {
-    position: absolute;
-    top: 50%;
-    right: 11px;
-    transform: translateY(-50%);
-  }
-
-  &__none {
-    display: none;
-  }
-
-  &__none.display {
-    display: block;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 80%;
   }
 }
 

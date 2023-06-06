@@ -8,7 +8,7 @@ import slide5 from "../../assets/slide5.jpg";
 import slide6 from "../../assets/slide6.jpg";
 import Slider from "react-slick";
 
-import "./CarouselStyles.scss";
+import "./carouselStyles.scss";
 
 const Carousel = () => {
   const settings = {
