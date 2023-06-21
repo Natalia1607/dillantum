@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Breadcrumb } from "antd";
-import { Tabs, Search, PropertyList, TabsList } from "../../components";
+import { Tabs, Search, PropertyList } from "../../components";
 import "./propertiesPage.scss";
 
 const Rent = () => {
@@ -12,13 +12,13 @@ const Rent = () => {
       <div className="container page__container">
         <div className="banner">
           <p>Popular searches</p>
-          <h2>
+          <h1>
             {location.pathname === "/for-sale/property" ? (
               <Link to={"/for-sale/property"}>Buy</Link>
             ) : (
               <Link to={"/for-rent/property"}>Rent</Link>
             )}
-          </h2>
+          </h1>
         </div>
         <div className="content__container">
           {location.pathname !== "/for-sale/property" && (
@@ -40,7 +40,6 @@ const Rent = () => {
               </Breadcrumb>
             </>
           )}
-          <TabsList />
           <PropertyList />
         </div> 
       </div>

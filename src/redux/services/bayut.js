@@ -21,15 +21,15 @@ export const bayutApi = createApi({
       query: (rentType) => `/properties/list?locationExternalIDs=5002&purpose=for-rent&rentFrequency=${rentType}`,
     }),
     getProperyDetails: builder.query({
-      query: (id) => `/properties/detail?externalID=${id}`,
+      query: (id) => `/properties/detail?externalID=${id}`, 
     }),
     /* getServerSideProps: builder.query({
       query: (locationExternalIDs, purpose, categoryExternalID, bathsMin, rentFrequency, minPrice, maxPrice, roomsMin, sort, areaMax) =>
         `/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalId=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`,
-    }), 
+    }), */
     getAgencyList: builder.query({
       query: (phrase) => `/agencies/list?query=${phrase}`,
-    }), */
+    }),  
   }),
 });
 
@@ -37,6 +37,6 @@ export const {
   useGetPropertyListQuery,
   useGetTabListQuery,
   useGetProperyDetailsQuery,
-  /* useGetServerSidePropsQuery, 
-  useGetAgencyListQuery, */
+  /* useGetServerSidePropsQuery, */
+  useGetAgencyListQuery, 
 } = bayutApi;

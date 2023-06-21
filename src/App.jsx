@@ -9,6 +9,7 @@ import {
   PropertiesPage,
   PropertyCardPage,
   UserPage,
+  AgentPage,
 } from "./containers";
 import { useLocation } from "react-router-dom";
 
@@ -22,16 +23,11 @@ const App = () => {
           <Route path="/" element={<MainContainer />} />
           <Route path="/register" element={<RegisterContainer />} />
           <Route path="/sign-in" element={<SignInContainer />} />
-          <Route path="/:purpose/property" element={<PropertiesPage />}></Route>
-          <Route
-            path="/:purpose/property/:propertyId"
-            element={<PropertyCardPage />}
-          />
-          <Route
-            path="/:purpose/property/:rentFrequency"
-            element={<PropertiesPage />}
-          />
+          <Route path="/:purpose/property" element={<PropertiesPage />} />
+          <Route path="/:purpose/property/:propertyId" element={<PropertyCardPage />} />
+          <Route path="/:purpose/property/:rentFrequency" element={<PropertiesPage />} />
           <Route path="/createItem" element={<CreateContainer />} />
+          <Route path="/agencies" element={<AgentPage />} />
           <Route path="/personal_account" element={<UserPage />}>
             <Route path="/personal_account/favorites" element={<UserPage />} />
             <Route path="/personal_account/searches" element={<UserPage />} />

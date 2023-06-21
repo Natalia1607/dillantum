@@ -5,3 +5,4 @@ export { default as CreateContainer } from './CreatePage/CreateContainer';
 export { default as PropertiesPage } from './PropertiesPage/PropertiesPage';
 export { default as UserPage } from './UserPage/UserPage';
 export { default as PropertyCardPage } from './PropertyCardPage/PropertyCardPage';
+export { default as AgentPage } from './AgentPage/AgentPage';

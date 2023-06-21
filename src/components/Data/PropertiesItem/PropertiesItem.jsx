@@ -49,7 +49,7 @@ const PropertiesItem = ({
         <img className="card__agency" src={agency?.logo?.url} alt="agency" />
         <p className="flex ai-c gap_6"><HiOutlineLocationMarker className="icon" />{city} / {address}</p>
         <p className="card__data_price mb36">
-          {`AED ${price}`}<span> / {rentType}</span>
+          {`AED ${price}`}<span>{`${rentType}` == "null" ? "" : ` / ${rentType}`}</span>
         </p>
         <hr />
         <div className="card__icons mt24">

@@ -22,6 +22,7 @@ import { storage } from "../../redux/services/firebase";
 import { actionType } from "../../context/reducer";
 import { useStateValue } from "../../context/StateProvider";
 import { saveItem, getAllAds } from "../../utils/firebaseFunctions";
+import { motion } from "framer-motion";
 import "./createPage.scss";
 
 const CreateContainer = () => {
@@ -36,10 +37,10 @@ const CreateContainer = () => {
   const [description, setDescription] = useState("");
   const [imageAsset, setImageAsset] = useState(null);
 
-  const [fields, setFields] = useState(true);
+  const [fields, setFields] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [msg, setMsg] = useState(null);
-  const [alertStatus, setAlertStatus] = useState("");
+  const [alertStatus, setAlertStatus] = useState("danger");
   const dispatch = useStateValue();
 
   const uploadImage = (e) => {
@@ -180,14 +181,17 @@ const CreateContainer = () => {
     <div className="container">
       <div className="upload__container">
         {fields && (
-          <p
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className={`message ${alertStatus === "danger"
                 ? "message-danger"
                 : "message-success"
             }`}
           >
             {msg}
-          </p>
+          </motion.p>
         )}
 
         <div className="upload__container_input flex">
