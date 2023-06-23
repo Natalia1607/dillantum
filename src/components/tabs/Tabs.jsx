@@ -43,7 +43,7 @@ const Tabs = (rentType) => {
           </Link>
         </div>
         <div className="content-tabs">
-          <dv
+          <div
             className={
               toggleState === 2 ? "content  active-content" : "content"
             }
@@ -55,7 +55,7 @@ const Tabs = (rentType) => {
               </Breadcrumb.Item>
               <Breadcrumb.Item>Short Term (Daily)</Breadcrumb.Item>
             </Breadcrumb>
-          </dv>
+          </div>
           <div
             className={
               toggleState === 3 ? "content  active-content" : "content"

@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../redux/services/firebase";
-
 import { RiMenu3Fill, RiCloseFill, RiUser3Fill } from "react-icons/ri";
 import { MdAdd, MdLogout } from "react-icons/md";
 import { RiUserSharedLine } from "react-icons/ri";
 
 const CTA = () => {
+  const handleNav = () => setNav(!nav);
+  const location = useLocation();
+  const [nav, setNav] = useState(false);
+  const [authUser, setAuthUser] = useState(null);
+
   const appearance = () => {
     const elements = document.querySelectorAll(".account__panel_opacity");
     elements.forEach((el) => el.classList.toggle("opacity"));
   };
+ 
+  useEffect(() => {
+    const elements = document.querySelectorAll(".account__panel_opacity");
+    elements.forEach((el) => el.classList.remove("opacity"));
+    if(nav) {
+      setNav(!nav)
+    };
+  }, [location]);
 
-  const [nav, setNav] = useState(false);
-  const [authUser, setAuthUser] = useState(null);
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -38,9 +47,6 @@ const CTA = () => {
       .catch((error) => console.log(error));
   };
 
-  const handleNav = () => setNav(!nav);
-  const location = useLocation();
-
   if (
     location.pathname === "/" ||
     location.pathname === "/register" ||
@@ -49,7 +55,6 @@ const CTA = () => {
     return (
       <>
         {authUser ? (
-          /* <Link to={'!#'} className='btn' onClick={userSignOut}>Sign out</Link> */
           <div className="header__account">
             <RiUser3Fill className="icon" size={20} onClick={appearance} />
             <div className="account__panel account__panel_opacity">
@@ -152,7 +157,6 @@ const CTA = () => {
           {authUser ? (
             <></>
           ) : (
-            /* <Link to={'!#'} className='btn m-auto' onClick={userSignOut}>Sign out</Link> */
             <div className="cta flex gap jc-c">
               <Link to={"/sign-in"} className="btn">
                 Sign in

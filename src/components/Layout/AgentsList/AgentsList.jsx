@@ -1,12 +1,11 @@
 import React, { useRef, useState } from "react";
-import { BiSearchAlt } from "react-icons/bi";
-
+import { BiSearch } from "react-icons/bi";
 import { useGetAgencyListQuery } from "../../../redux/services/bayut";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 import AgentItems from "../../Data/AgentItems/AgentItems";
 
-import './agentsListStyles.scss';
+import "./agentsListStyles.scss";
 
 const AgentsList = () => {
   const phraseInputRef = useRef();
@@ -36,35 +35,33 @@ const AgentsList = () => {
     }
     setEnteredPhrase(enteredText);
   };
-
+ 
   return (
-    <>
-      <section className="container mb24 mt24">
-        <h1>List of verified <span>Agencies</span></h1>
-        <div className=" flex ai-c jc-c">
-          <form onSubmit={handleSubmit} className="flex ai-c">
-            <label htmlFor="text"></label>
-            <input
-              placeholder="Enter keyword, e.g rental"
-              type="text"
-              ref={phraseInputRef}
-            />
-            <button className="btn">
-              <BiSearchAlt className="icon" />
-            </button>
-          </form>
-        </div>
+    <section className="container mb24 mt24">
+      <h1>
+        List of verified <span>Agencies</span>
+      </h1>
+      <div className=" flex ai-c jc-c">
+        <form onSubmit={handleSubmit} className="flex ai-c">
+          <label htmlFor="text"></label>
+          <input
+            placeholder="Enter keyword, e.g rental"
+            type="text"
+            ref={phraseInputRef}
+          />
+          <button className="btn">
+            <BiSearch className="icon" />
+          </button>
+        </form>
+      </div>
 
-        <div>
-          <ul className="acency-card__wrap flex jc-sb">
-            {isFetching && <Loader />}
-            {!isFetching && !error && mappedList}
-            {!isFetching && mappedList?.length === 0 && <Error />}
-          </ul>
-        </div>
-      </section>
-    </>
+      <ul className="acency-card__wrap flex gap">
+        {isFetching && <Loader title={"Fetching agencies..."}/>}
+        {!isFetching && !error && mappedList}
+        {!isFetching && mappedList?.length === 0 && <Error />}
+      </ul>
+    </section>
   );
 };
 
-export default AgentsList;
+export default AgentsList; 

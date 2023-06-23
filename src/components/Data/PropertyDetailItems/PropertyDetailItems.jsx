@@ -11,10 +11,10 @@ import "./propertyDetalItems.scss";
 
 import { Breadcrumb } from "antd";
 
-const PropertyDetailItems = ({ 
+const PropertyDetailItems = ({
   id,
   coverPhoto,
-  photos, 
+  photos,
   title,
   city,
   address,
@@ -36,9 +36,11 @@ const PropertyDetailItems = ({
 }) => {
   return (
     <div className="property__container property pt24" key={id}>
-      <Breadcrumb separator=">" className="breadcrumb mb24">
+      <Breadcrumb separator=">" className="breadcrumb">
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="/for-rent/property">Property {purpose}</Breadcrumb.Item>
+        <Breadcrumb.Item href="/for-rent/property">
+          Property {purpose}
+        </Breadcrumb.Item>
         <Breadcrumb.Item>{title}</Breadcrumb.Item>
       </Breadcrumb>
       <div className="property__image mb12">
@@ -49,14 +51,18 @@ const PropertyDetailItems = ({
         </div>
       </div>
       <div className="mb24 flex gap">
-      <Fancybox
+        <Fancybox
           options={{
             Carousel: {
               infinite: false,
             },
           }}
         >
-          <a data-fancybox="gallery" href={`${logo}`} className="property__link flex ai-c">
+          <a
+            data-fancybox="gallery"
+            href={`${logo}`}
+            className="property__link flex ai-c"
+          >
             <HiOutlinePhotograph className="icon" />
             &nbsp;Photos
           </a>
@@ -77,14 +83,16 @@ const PropertyDetailItems = ({
           <MdSpaceDashboard className="icon" />
           &nbsp;Floor plan
         </a>
- 
       </div>
       <p className="property__price mb24">
         {`AED ${price}`} / {rentType}
       </p>
       <p className="property__address mb24 flex gap">
-        {title}, {address}, {city} 
-      <a href="#" className="flex gap_6"><FaMapMarkedAlt className="icon" />View map</a>
+        {title}, {address}, {city}
+        <a href="#" className="flex gap_6">
+          <FaMapMarkedAlt className="icon" />
+          View map
+        </a>
       </p>
       <div className="flex gap mb24">
         <div className="property__icon flex ai-c gap_6">

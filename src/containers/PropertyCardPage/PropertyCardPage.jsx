@@ -45,7 +45,7 @@ const PropertyPage = () => {
               furnishing={data?.furnishingStatus}
             /> 
           )}
-          {isFetching && <Loader />}
+          {isFetching && <Loader title={"Ad loading..."} />}
           {!isFetching && data?.length === 0 && <Error />}
         </div>
       </section>

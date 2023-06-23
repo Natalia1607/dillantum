@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { RiHotelBedFill } from "react-icons/ri";
 import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { GoVerified } from "react-icons/go";
- 
 import { useLocation } from "react-router-dom";
-
 import millify from 'millify';
 
 import './propertiesItem.scss';
@@ -35,7 +32,7 @@ const PropertiesItem = ({
     <li className="card card__wrapp">
         <p className="card__active">{isVerified && <GoVerified className="icon"/>}</p>
         <img className="card__img" src={coverPhoto} alt="real-estate" />
-        {location.pathname === "/personal_account/favorites" ? (
+        {location.pathname === "/personal_account/favorites" ? ( 
           <MdOutlineFavorite className="icon card__favourite" size={24} />
         ) : (
           <MdOutlineFavoriteBorder className="icon card__favourite" size={24} />
