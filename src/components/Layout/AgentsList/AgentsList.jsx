@@ -41,14 +41,14 @@ const AgentsList = () => {
         List of verified <span>Agencies</span>
       </h1>
       <div className=" flex ai-c jc-c">
-        <form onSubmit={handleSubmit} className="flex ai-c mb24">
+        <form onSubmit={handleSubmit} className="flex ai-c mb24 form-search">
           <input
             className="select-wrap"
             placeholder="Enter keyword, e.g rental"
             type="text"
             ref={phraseInputRef}
           />
-          <button className="btn">
+          <button className="btn flex ai-c">
             <BiSearch className="icon" />
           </button>
         </form>

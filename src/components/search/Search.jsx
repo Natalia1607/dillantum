@@ -29,14 +29,14 @@ const Search = () => {
   return (
     <div>
       <div className="filter__container flex ai-c jc-sb">
-        <form onSubmit={handleSearch} className="flex jc-c ai-c mb24">
+        <form onSubmit={handleSearch} className="flex jc-c ai-c mb24 form-search">
           <input
             placeholder="Enter city, e.g dubai"
             type="text"
-            className="select-wrap ant-select css-dev-only-do-not-override-1n7nwfa"
+            className="select-wrap"
             ref={phraseInputRef}
           />
-          <button className="btn">
+          <button className="btn flex ai-c">
             <BiSearch className="icon" />
           </button>
         </form>
@@ -46,7 +46,7 @@ const Search = () => {
         </div>
       </div>
       <div className="filter__none">
-        <SearchFilters />
+        <SearchFilters /> 
       </div>
     </div>
   );

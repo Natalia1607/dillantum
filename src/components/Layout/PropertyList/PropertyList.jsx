@@ -55,28 +55,16 @@ const PropertyList = () => {
           <>
             <div className="tabs__container md-flex">
               <div className="tabs__container_block flex jc-c">
-                <Link
-                  to={"/for-rent/property/daily"}
-                  className="tabs"
-                >
+                <Link to={"/for-rent/property/daily"} className="tabs">
                   Short Term (Daily)
                 </Link>
-                <Link
-                  to={"/for-rent/property/weekly"}
-                  className="tabs"
-                >
+                <Link to={"/for-rent/property/weekly"} className="tabs">
                   Short Term (Weekly)
                 </Link>
-                <Link
-                  to={"/for-rent/property/monthly"}
-                  className="tabs"
-                >
+                <Link to={"/for-rent/property/monthly"} className="tabs">
                   Long Term (Monthly)
                 </Link>
-                <Link
-                  to={"/for-rent/property/yearly"}
-                  className="tabs"
-                >
+                <Link to={"/for-rent/property/yearly"} className="tabs">
                   Long Term (Yearly)
                 </Link>
               </div>
@@ -88,12 +76,13 @@ const PropertyList = () => {
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
           <Breadcrumb.Item>Property {purpose}</Breadcrumb.Item>
         </Breadcrumb>
+
+        <ul className="propery-list flex gap">
+          {isFetching && <Loader />}
+          {!isFetching && !error && mappedList}
+          {!isFetching && mappedList?.length === 0 && <Error />}
+        </ul>
       </div>
-      <ul className="propery-list flex gap">
-        {isFetching && <Loader />}
-        {!isFetching && !error && mappedList}
-        {!isFetching && mappedList?.length === 0 && <Error />}
-      </ul>
     </section>
   );
 };
