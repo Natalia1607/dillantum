@@ -13,7 +13,6 @@ const AgentsList = () => {
   const { data, isFetching, error } = useGetAgencyListQuery(enteredPhrase);
 
   const agencyData = data?.hits;
-
   const mappedList = agencyData?.map((agent) => {
     return (
       <AgentItems
@@ -42,9 +41,9 @@ const AgentsList = () => {
         List of verified <span>Agencies</span>
       </h1>
       <div className=" flex ai-c jc-c">
-        <form onSubmit={handleSubmit} className="flex ai-c">
-          <label htmlFor="text"></label>
+        <form onSubmit={handleSubmit} className="flex ai-c mb24">
           <input
+            className="select-wrap"
             placeholder="Enter keyword, e.g rental"
             type="text"
             ref={phraseInputRef}

@@ -3,3 +3,88 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* Tabs */
+
+.tabs__container {
+    position: relative;
+    top: -46px;
+  
+    &_block.md-flex {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  .tabs {
+    padding: 12px 0;
+    width: 190px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    line-height: 130%;
+    background: var(--color-white);
+    color: var(--color-text);
+    border: 1px solid var(--color-bg);
+    cursor: pointer;
+    clip-path: polygon(0% 0%, 85% 0, 100% 45%, 100% 100%, 0% 100%);
+  }
+  
+  .active-tabs {
+    background: var(--color-bg);
+    border-bottom: 1px solid transparent;
+  }
+  
+  .content {
+    display: none;
+    
+    .cards {
+      padding: 0 12px;
+    }
+  
+    h3 {
+      margin-bottom: 24px;
+    }
+  
+    p {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .active-content {
+    display: block;
+  }
+  
+  /* mobile */
+  @media screen and (max-width: 768px) {
+    .md-flex {
+      visibility: hidden;
+      display: none;
+    }
+  
+    .tabs__container {
+      position: static;
+      height: auto;
+    }
+  
+    .tabs {
+      width: max-content;
+    }
+  
+    .block-tabs.md-hidden {
+      width: 100%;
+    }
+  
+    .block-tabs.md-hidden .input-wrap {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .block-tabs.md-hidden {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  

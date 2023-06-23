@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
 import { useGetPropertyListQuery } from "../../../redux/services/bayut";
@@ -6,17 +6,17 @@ import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 
 import "./propertyListStyles.scss";
-import Tabs from "../../Tabs/Tabs";
 import Search from "../../Search/Search";
 import { Breadcrumb } from "antd";
 
 const PropertyList = () => {
   const location = useLocation();
+  const [filter, setFilter] = useState("");
   const params = useParams();
   const { purpose } = params;
   const { data, isFetching, error } = useGetPropertyListQuery(purpose);
-  const propertiesData = data?.hits;
 
+  const propertiesData = data?.hits;
   const mappedList = propertiesData?.map((property) => {
     return (
       <PropertiesItem
@@ -51,7 +51,38 @@ const PropertyList = () => {
         </h1>
       </div>
       <div className="content__container">
-        {location.pathname !== "/for-sale/property" && <Tabs />}
+        {location.pathname !== "/for-sale/property" && (
+          <>
+            <div className="tabs__container md-flex">
+              <div className="tabs__container_block flex jc-c">
+                <Link
+                  to={"/for-rent/property/daily"}
+                  className="tabs"
+                >
+                  Short Term (Daily)
+                </Link>
+                <Link
+                  to={"/for-rent/property/weekly"}
+                  className="tabs"
+                >
+                  Short Term (Weekly)
+                </Link>
+                <Link
+                  to={"/for-rent/property/monthly"}
+                  className="tabs"
+                >
+                  Long Term (Monthly)
+                </Link>
+                <Link
+                  to={"/for-rent/property/yearly"}
+                  className="tabs"
+                >
+                  Long Term (Yearly)
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
         <Search />
         <Breadcrumb separator=">" className="breadcrumb">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>

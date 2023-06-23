@@ -24,8 +24,8 @@ const App = () => {
           <Route path="/register" element={<RegisterContainer />} />
           <Route path="/sign-in" element={<SignInContainer />} />
           <Route path="/:purpose/property" element={<PropertiesPage />} />
+          <Route path="/for-rent/property:rentType" element={<PropertiesPage />} />
           <Route path="/:purpose/property/:propertyId" element={<PropertyCardPage />} />
-          <Route path="/:purpose/property/:rentFrequency" element={<PropertiesPage />} />
           <Route path="/createItem" element={<CreateContainer />} />
           <Route path="/agencies" element={<AgentPage />} />
           <Route path="/personal_account" element={<UserPage />}>
