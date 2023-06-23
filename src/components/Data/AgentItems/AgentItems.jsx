@@ -4,7 +4,7 @@ import "./agentItemsStyles.scss";
 
 const AgentItems = ({ id, address, logo, name, contact }) => {
   return (
-    <li className="card card__wrapp" key={id}> 
+    <li className="card card__wrapp" key={id}>
       <div className="agency-card__logo flex jc-c ai-c mb12">
         <img src={logo} alt="real estate" />
       </div>

@@ -1,5 +1,5 @@
 import loader from "../../../assets/spinner.gif";
-import './loader.scss';
+import './loaderStyles.scss';
 
 const Loader = ({ title }) => (
   <div className="loader">

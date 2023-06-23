@@ -14,8 +14,8 @@ const Footer = () => {
         </a>
       </div> 
       <div className="footer__docs">
-        <a href="#">Terms and Conditions</a>
-        <a href="#">Privacy Policy</a>
+        <a href="*">Terms and Conditions</a>
+        <a href="*">Privacy Policy</a>
       </div>
       <div className="copyright">
         Copyright © 2023 Dillantum. All Rights Reserved

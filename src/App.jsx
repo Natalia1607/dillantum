@@ -10,6 +10,7 @@ import {
   PropertyCardPage,
   UserPage,
   AgentPage,
+  NotFoundPage,
 } from "./containers";
 import { useLocation } from "react-router-dom";
 
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/personal_account/searches" element={<UserPage />} />
             <Route path="/personal_account/ads" element={<UserPage />} />
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       {location.pathname != "/" &&

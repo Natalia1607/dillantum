@@ -9,7 +9,7 @@ import {
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight, 
 } from "react-icons/md";
-import "./userPage.scss";
+import "./userPageStyles.scss";
 
 const MainContainer = () => {
   const location = useLocation();

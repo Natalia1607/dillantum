@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Form, Input, Checkbox } from "antd";
 
-import "./authPage.scss";
+import "./authPageStyles.scss";
 
 import Table from "../../assets/reg.jpg";
 

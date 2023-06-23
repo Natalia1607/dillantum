@@ -9,7 +9,7 @@ import { GoVerified } from "react-icons/go";
 import { useLocation } from "react-router-dom";
 import millify from 'millify';
 
-import './propertiesItem.scss';
+import './propertiesItemStyles.scss';
 
 const PropertiesItem = ({
   id,

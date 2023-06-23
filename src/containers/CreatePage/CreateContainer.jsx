@@ -23,7 +23,7 @@ import { actionType } from "../../context/reducer";
 import { useStateValue } from "../../context/StateProvider";
 import { saveItem, getAllAds } from "../../utils/firebaseFunctions";
 import { motion } from "framer-motion";
-import "./createPage.scss";
+import "./createPageStyles.scss";
 
 const CreateContainer = () => {
   const [title, setTitle] = useState("");
@@ -326,7 +326,7 @@ const CreateContainer = () => {
           ></textarea>
         </div>
 
-        <div className="upload__container_input_footer">
+        <div className="upload__container_footer">
           <button type="button" className="btn btn-primary hover-diagonal_light" onClick={saveDetails}>
             Save
           </button>

@@ -1,15 +1,16 @@
 import React, { useRef } from "react";
+import millify from "millify";
+import Fancybox from "../../fancybox/Fancybox";
+import { Breadcrumb } from "antd";
+
 import { RiHotelBedFill } from "react-icons/ri";
 import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { BsFillTelephoneFill, BsWhatsapp } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { FaMapMarkedAlt } from "react-icons/fa";
-import millify from "millify";
-import Fancybox from "../../fancybox/Fancybox";
-import "./propertyDetalItems.scss";
 
-import { Breadcrumb } from "antd";
+import "./propertyDetalItemsStyles.scss";
 
 const PropertyDetailItems = ({
   id,

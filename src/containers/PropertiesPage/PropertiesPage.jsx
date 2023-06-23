@@ -1,6 +1,6 @@
 import React from "react";
 import { PropertyList } from "../../components";
-import "./propertiesPage.scss";
+import "./propertiesPageStyles.scss";
 
 const Rent = () => {
   return (
