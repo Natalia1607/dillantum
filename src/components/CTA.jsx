@@ -147,7 +147,7 @@ const CTA = () => {
             </Link>
           )}
           <li>
-            <Link to={"/agencies"}>Agent Portal</Link>
+            <Link to={"/agencies"}>Agencies</Link>
           </li>
           <li>
             <Link to={"#"}>Blog</Link>

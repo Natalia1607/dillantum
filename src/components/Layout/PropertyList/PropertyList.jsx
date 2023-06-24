@@ -40,7 +40,7 @@ const PropertyList = () => {
 
   return (
     <section>
-      <div className="banner">
+      <div className="banner mb24">
         <p>Popular searches</p>
         <h1>
           {location.pathname === "/for-sale/property" ? (

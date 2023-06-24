@@ -20,8 +20,9 @@ const AgentsList = () => {
         id={agent?.externalID}
         address={agent?.location}
         logo={agent?.logo?.url}
-        contact={agent?.phoneNumber}
         name={agent?.name}
+        contact={agent?.phoneNumber}
+        stats={agent?.stats}
       />
     );
   });

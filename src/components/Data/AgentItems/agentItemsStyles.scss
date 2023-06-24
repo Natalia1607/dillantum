@@ -26,6 +26,15 @@
     @media screen and (max-width: 800px) {
       padding-top: 2rem;
     }
+
+    .agency-count {
+      .count {
+        padding: 0.3rem;
+        background-color: var(--color-bg);
+        font-weight: 800;
+        border-radius: 6px;
+      }
+    }
   }
 
   @media screen and (max-width: 660px) {
