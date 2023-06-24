@@ -6,18 +6,22 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
     @media screen and (max-width: 800px) {
-      width: 100%;
       display: flex;
       gap: 24px;
       height: auto;
+      width: 100%;
     }
 
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 660px) {
       display: block;
-      width: 440px;
+      width: 75%;
     }
-
+    
     @media screen and (max-width: 530px) {
+      width: 90%;
+    }
+    
+    @media screen and (max-width: 400px) {
       width: 100%;
     }
   }
@@ -38,7 +42,7 @@
       height: auto;
     }
 
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 660px) {
       width: 100%;
       height: auto;
     }
@@ -88,6 +92,14 @@
       font-weight: 300;
       font-size: 14px;
     }
+
+    @media screen and (max-width: 660px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 400px) {
+      justify-content: space-between;
+    }
   }
 
   &__agency {
@@ -109,10 +121,6 @@
     &:hover {
       color: var(--color-text);
     }
-  }
-
-  @media screen and (max-width: 800px) {
-    width: 100%;
   }
 }
 
