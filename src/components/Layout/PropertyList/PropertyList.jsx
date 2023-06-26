@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
+import { Breadcrumb } from "antd";
 import { useGetPropertyListQuery } from "../../../redux/services/bayut";
+
+import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
+import Search from "../../Search/Search";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
 
 import "./propertyListStyles.scss";
-import Search from "../../Search/Search";
-import { Breadcrumb } from "antd";
 
 const PropertyList = () => {
   const location = useLocation();
-  const [filter, setFilter] = useState("");
   const params = useParams();
   const { purpose } = params;
   const { data, isFetching, error } = useGetPropertyListQuery(purpose);
@@ -55,16 +55,16 @@ const PropertyList = () => {
           <>
             <div className="tabs__container md-flex">
               <div className="tabs__container_block flex jc-c">
-                <Link to={"/for-rent/property/daily"} className="tabs">
+                <Link to={"#"} className="tabs">
                   Short Term (Daily)
                 </Link>
-                <Link to={"/for-rent/property/weekly"} className="tabs">
+                <Link to={"#"} className="tabs">
                   Short Term (Weekly)
                 </Link>
-                <Link to={"/for-rent/property/monthly"} className="tabs">
+                <Link to={"#"} className="tabs">
                   Long Term (Monthly)
                 </Link>
-                <Link to={"/for-rent/property/yearly"} className="tabs">
+                <Link to={"#"} className="tabs">
                   Long Term (Yearly)
                 </Link>
               </div>
