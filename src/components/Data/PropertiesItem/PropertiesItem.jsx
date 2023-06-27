@@ -64,7 +64,7 @@ const PropertiesItem = ({
             <FaBath className="icon" />
             <p>
               {baths} <span>Bath</span>
-            </p>
+            </p> 
           </div>
           <div>
             <MdSpaceDashboard className="icon" />

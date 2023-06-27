@@ -1,22 +1,21 @@
 import React from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Breadcrumb } from "antd";
-import { useGetPropertyListQuery } from "../../../redux/services/bayut";
+import { useGetAgencyPropertyListQuery } from "../../../redux/services/bayut";
 
 import PropertiesItem from "../../Data/PropertiesItem/PropertiesItem";
 import Search from "../../Search/Search";
 import Loader from "../../UI/Loader/Loader";
 import Error from "../../UI/Error/Error";
-
-import "./propertyListStyles.scss";
 import Banner from "../../Banner/Banner";
 
-const PropertyList = () => {
-  const location = useLocation();
-  const params = useParams();
-  const { purpose } = params;
-  const { data, isFetching, error } = useGetPropertyListQuery(purpose);
+import "../PropertyList/propertyListStyles.scss";
 
+const AgenciesPropertyList = () => {
+  const params = useParams();
+  const { agencySlug } = params;
+  const { data, isFetching, error } = useGetAgencyPropertyListQuery(agencySlug);
+  const name = agencySlug.replace(/[^a-z]/g, ' ').toUpperCase();
   const propertiesData = data?.hits;
   const mappedList = propertiesData?.map((property) => {
     return (
@@ -38,43 +37,15 @@ const PropertyList = () => {
       />
     );
   });
-
   return (
     <section>
-      <Banner
-        title={
-          location.pathname === "/for-sale/property" ? (
-            <Link to={"/for-sale/property"}>Buy</Link>
-          ) : (
-            <Link to={"/for-rent/property"}>Rent</Link>
-          )
-        }
-      />
+      <Banner title={name}/>
       <div className="content__container">
-        {location.pathname !== "/for-sale/property" && (
-          <>
-            <div className="tabs__container md-flex">
-              <div className="tabs__container_block flex jc-c">
-                <Link to={"#"} className="tabs">
-                  Short Term (Daily)
-                </Link>
-                <Link to={"#"} className="tabs">
-                  Short Term (Weekly)
-                </Link>
-                <Link to={"#"} className="tabs">
-                  Long Term (Monthly)
-                </Link>
-                <Link to={"#"} className="tabs">
-                  Long Term (Yearly)
-                </Link>
-              </div>
-            </div>
-          </>
-        )}
         <Search />
         <Breadcrumb separator=">" className="breadcrumb">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item>Property {purpose}</Breadcrumb.Item>
+          <Breadcrumb.Item href="/agencies">Agencies</Breadcrumb.Item>
+          <Breadcrumb.Item>Property</Breadcrumb.Item>
         </Breadcrumb>
 
         <ul className="propery-list flex gap">
@@ -84,7 +55,7 @@ const PropertyList = () => {
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PropertyList;
+export default AgenciesPropertyList

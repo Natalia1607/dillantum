@@ -10,7 +10,7 @@ import { BsFillTelephoneFill, BsWhatsapp } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { FaMapMarkedAlt } from "react-icons/fa";
 
-import "./propertyDetalItemsStyles.scss";
+import "./propertyDetalItemStyles.scss";
 
 const PropertyDetailItems = ({
   id,

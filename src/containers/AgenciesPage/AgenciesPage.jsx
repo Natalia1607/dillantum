@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { AgentsList } from "../../components";
+import { AgenciesList } from "../../components";
 
 const AgentPage = () => {
   const divRef = useRef();
@@ -10,7 +10,7 @@ const AgentPage = () => {
 
   return (
     <div ref={divRef}>
-      <AgentsList />
+      <AgenciesList />
     </div>
   );
 };

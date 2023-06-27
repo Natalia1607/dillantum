@@ -2,9 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import { HiIdentification, HiOutlineLocationMarker } from "react-icons/hi";
-import "./agentItemsStyles.scss";
+import "./agencyItemStyles.scss";
 
-const AgentItems = ({ id, address, logo, name, contact, stats }) => {
+const AgencyItem = ({ 
+  id, 
+  address, 
+  logo, 
+  name, 
+  contact, 
+  stats, 
+  agencySlug
+}) => {
   return (
     <li className="card card__wrapp agency-card" key={id}>
       <div className="agency-card__logo flex jc-c ai-c">
@@ -23,12 +31,12 @@ const AgentItems = ({ id, address, logo, name, contact, stats }) => {
         <div className="agency-count mb24"> 
           Count properties: <CountUp className="count" end={`${stats?.adsCount}`} duration={5} />
         </div>
-        <Link to={`*`} className="btn card__btn">
+        <Link to={`/agencies/${agencySlug}`} className="btn card__btn">
           Go to Ads
-        </Link>
+        </Link> 
       </div>
     </li>
   );
 };
 
-export default AgentItems;
+export default AgencyItem;

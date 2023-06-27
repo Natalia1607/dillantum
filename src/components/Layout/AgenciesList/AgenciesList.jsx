@@ -2,12 +2,13 @@ import React, { useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useGetAgencyListQuery } from "../../../redux/services/bayut";
 import Loader from "../../UI/Loader/Loader";
-import Error from "../../UI/Error/Error";
-import AgentItems from "../../Data/AgentItems/AgentItems";
+import Error from "../../UI/Error/Error"; 
+import Banner from "../../Banner/Banner";
+import AgentItems from "../../Data/AgencyItem/AgencyItem";
 
-import "./agentsListStyles.scss";
+import "./agenciesListStyles.scss";
 
-const AgentsList = () => {
+const AgenciesList = () => {
   const phraseInputRef = useRef();
   const [enteredPhrase, setEnteredPhrase] = useState("estate");
   const { data, isFetching, error } = useGetAgencyListQuery(enteredPhrase);
@@ -15,7 +16,7 @@ const AgentsList = () => {
   const agencyData = data?.hits;
   const mappedList = agencyData?.map((agent) => {
     return (
-      <AgentItems
+      <AgentItems 
         key={agent?.externalID}
         id={agent?.externalID}
         address={agent?.location}
@@ -23,6 +24,7 @@ const AgentsList = () => {
         name={agent?.name}
         contact={agent?.phoneNumber}
         stats={agent?.stats}
+        agencySlug={agent?.slug}
       />
     );
   });
@@ -37,10 +39,8 @@ const AgentsList = () => {
   };
  
   return (
-    <section className="container mb24 mt24">
-      <h1>
-        List of verified <span>Agencies</span>
-      </h1>
+    <section className="container mb24">
+      <Banner title={`List of verified Agencies`}/>
       <div className=" flex ai-c jc-c">
         <form onSubmit={handleSubmit} className="flex ai-c mb24 form-search">
           <input
@@ -64,4 +64,4 @@ const AgentsList = () => {
   );
 };
 
-export default AgentsList; 
+export default AgenciesList; 

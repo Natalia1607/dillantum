@@ -17,10 +17,7 @@ export const bayutApi = createApi({
     getPropertyList: builder.query({
       query: (purpose) => `/properties/list?locationExternalIDs=5002&purpose=${purpose}`, 
     }), 
-    getTabList: builder.query({
-      query: (rentType) => `/properties/list?locationExternalIDs=5002&purpose=for-rent&rentFrequency=${rentType}`,
-    }),
-    getProperyDetails: builder.query({
+    getPropertyDetails: builder.query({
       query: (id) => `/properties/detail?externalID=${id}`, 
     }),
     getServerSideProps: builder.query({
@@ -30,13 +27,16 @@ export const bayutApi = createApi({
     getAgencyList: builder.query({
       query: (phrase) => `/agencies/list?query=${phrase}`,
     }),  
+    getAgencyPropertyList: builder.query({
+      query: (agencySlug) => `/agencies/get-listings?agencySlug=${agencySlug}`,
+    }),  
   }),
 });
 
 export const {
   useGetPropertyListQuery,
-  useGetTabListQuery,
-  useGetProperyDetailsQuery,
+  useGetPropertyDetailsQuery,
   useGetServerSidePropsQuery,
   useGetAgencyListQuery, 
+  useGetAgencyPropertyListQuery, 
 } = bayutApi;
