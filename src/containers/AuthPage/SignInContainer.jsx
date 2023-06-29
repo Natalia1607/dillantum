@@ -13,8 +13,7 @@ import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 
 import { onAuthStateChanged } from "firebase/auth";
-import { Result } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./authPageStyles.scss";
 
@@ -37,27 +36,32 @@ const SignInContainer = () => {
       listen();
     };
   }, []);
-  
+
   const appearance = () => {
     const el = document.querySelector("#form__opacity");
     el.classList.toggle("opacity");
   };
 
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const signIn = (e) => {
-    /* e.preventDefault(); */
+    e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-      .then((useCredential) => {
-        console.log(useCredential);
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        navigate("/personal_account");
       })
       .catch((error) => {
-        console.log(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
       });
   };
 
-  window.localStorage.setItem('name', `${email}`);
-  const name = window.localStorage.getItem('name');
+  window.localStorage.setItem("name", `${email}`);
+  const name = window.localStorage.getItem("name");
 
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
@@ -78,94 +82,89 @@ const SignInContainer = () => {
       <div className="auth__container_bg md-flex">
         <img src={Key} alt="key" />
       </div>
-      {!authUser ? (
-        <div className="auth__container_right sign__right">
-          <h2 className="mb36">Sign in</h2> {/* Login In to your Account */}
+      <div className="auth__container_right sign__right">
+        <h2 className="mb36">Sign in</h2>
+        <button
+          className="btn flex ai-c gap_6 mb24"
+          style={button}
+          onClick={signInGoogle}
+        >
+          <FcGoogle size={22} />
+          Continue with Google
+        </button>
+        <button
+          className="btn flex ai-c gap_6 mb24"
+          style={button}
+          onClick={appearance}
+        >
+          <MdEmail color="#1976d2" size={22} />
+          Continue with Email
+        </button>
+        <Form
+          action="#"
+          name="nest-messages"
+          layout="vertical"
+          className="auth__container_form form__opacity"
+          id="form__opacity"
+        >
+          <Form.Item
+            name={["user", "email"]}
+            label="E-mail"
+            className="item__input"
+            rules={[
+              {
+                type: "email",
+                message: "The input is not valid E-mail!",
+              },
+              {
+                required: true,
+                message: "Please input your E-mail!",
+              },
+            ]}
+          >
+            <Input
+              autoFocus={true}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Password"
+            name="password"
+            className="item__input"
+            rules={[
+              {
+                required: true,
+                message: "Please input your password!",
+              },
+            ]}
+          >
+            <Input.Password
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Item>
           <button
-            className="btn flex ai-c gap_6 mb24"
-            style={button}
-            onClick={signInGoogle}
+            className="btn btn-primary hover-diagonal_light mb12"
+            type="submit"
+            onClick={signIn}
           >
-            <FcGoogle size={22} />
-            Continue with Google
+            Sign in
           </button>
-          <button
-            className="btn flex ai-c gap_6 mb24"
-            style={button}
-            onClick={appearance}
-          >
-            <MdEmail color="#1976d2" size={22} />
-            Continue with Email
-          </button>
-          <Form
-            action="#"
-            name="nest-messages"
-            layout="vertical"
-            className="auth__container_form form__opacity"
-            id="form__opacity"
-          >
-            <Form.Item
-              name={["user", "email"]}
-              label="E-mail"
-              className="item__input"
-              rules={[
-                {
-                  type: "email",
-                  message: "The input is not valid E-mail!",
-                },
-                {
-                  required: true,
-                  message: "Please input your E-mail!",
-                },
-              ]}
-            >
-              <Input
-                autoFocus={true}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Item>
-            <Form.Item
-              label="Password"
-              name="password"
-              className="item__input"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your password!",
-                },
-              ]}
-            >
-              <Input.Password
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Item>
-            <button
-              className="btn btn-primary hover-diagonal_light"
-              type="submit"
-              onClick={signIn}
-            >
-              Sign in
-            </button>
-          </Form>
-        </div>
-      ) : (
-        <div className="auth__container_result">
-          <Result
-            status="success"
-            title={`You are logged in as ${name}`}
-          />
-          <div className="flex gap jc-c">
-            <Link to={"/personal_account"} className="btn">
-              Account
-            </Link>
-            <Link to={"/createItem"} className="btn">
-              Upload
+          <div>
+            <Link to="/reset" className="auth__container_link">
+              Forgot Password
             </Link>
           </div>
-        </div>
-      )}
+          <div>
+            Don't have an account?{" "}
+            <Link to={"/register"} className="auth__container_link">
+              Register
+            </Link>{" "}
+            now.
+          </div>
+        </Form>
+      </div>
     </div>
   );
 };

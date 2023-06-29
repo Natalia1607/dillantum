@@ -12,19 +12,33 @@ import {
   AgenciesPage,
   NotFoundPage,
   AgenciesPropertyPage,
+  ResetPasswordContainer,
 } from "./containers";
 import { useLocation } from "react-router-dom";
+import { FloatButton } from 'antd';
+import { BiArrowToTop } from "react-icons/bi";
 
 const App = () => {
   const location = useLocation();
   return (
     <div>
+      <FloatButton.Group
+        shape="circle"
+        style={{
+          right: 25,
+        }}
+      >
+
+        <FloatButton.BackTop icon={<BiArrowToTop className="icon" />} visibilityHeight={0} />
+      </FloatButton.Group>
+
       <Header />
       <main>
         <Routes>
           <Route path="/" element={<MainContainer />} />
           <Route path="/register" element={<RegisterContainer />} />
           <Route path="/sign-in" element={<SignInContainer />} />
+          <Route path="/reset" element={<ResetPasswordContainer />} />
           <Route path="/:purpose/property" element={<PropertiesPage />} />
           <Route path="/for-rent/property:rentType" element={<PropertiesPage />} />
           <Route path="/:purpose/property/:id" element={<PropertyCardPage />} />

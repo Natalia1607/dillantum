@@ -18,7 +18,7 @@ export const saveItem = async (data) => {
 // get all items
 export const getAllAds = async () => {
   const items = await getDocs(
-    query(collection(firestore, "ad"), orderBy("id", "desc"))
+    query(collection(firestore, "ad"), orderBy("id"))
   );
 
   return items.docs.map((doc) => doc.data());

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { Breadcrumb } from "antd";
 import { useGetPropertyListQuery } from "../../../redux/services/bayut";
@@ -10,8 +10,11 @@ import Error from "../../UI/Error/Error";
 
 import "./propertyListStyles.scss";
 import Banner from "../../Banner/Banner";
+import { fetchAPI } from "../../../utils/fetchApi";
+
 
 const PropertyList = () => {
+  const [type, setType] = useState("monthly");
   const location = useLocation();
   const params = useParams();
   const { purpose } = params;
@@ -55,16 +58,16 @@ const PropertyList = () => {
           <>
             <div className="tabs__container md-flex">
               <div className="tabs__container_block flex jc-c">
-                <Link to={"#"} className="tabs">
+                <Link to={"#"} className="tabs" onClick={() => setType("daily")}>
                   Short Term (Daily)
                 </Link>
-                <Link to={"#"} className="tabs">
+                <Link to={"#"} className="tabs" onClick={() => setType("weekly")}>
                   Short Term (Weekly)
                 </Link>
-                <Link to={"#"} className="tabs">
+                <Link to={"#"} className="tabs" onClick={() => setType("monthly")}>
                   Long Term (Monthly)
                 </Link>
-                <Link to={"#"} className="tabs">
+                <Link to={"#"} className="tabs" onClick={() => setType("yearly")}>
                   Long Term (Yearly)
                 </Link>
               </div>

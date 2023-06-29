@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form, Input, Checkbox } from "antd";
 
 import "./authPageStyles.scss";
@@ -7,9 +7,10 @@ import "./authPageStyles.scss";
 import Table from "../../assets/reg.jpg";
 
 import { auth } from "../../redux/services/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-
-import { onAuthStateChanged } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { Result } from "antd";
 
 const RegisterContainer = () => {
@@ -18,6 +19,7 @@ const RegisterContainer = () => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
         setAuthUser(user);
+        const uid = user.uid;
       } else {
         setAuthUser(null);
       }
@@ -27,16 +29,24 @@ const RegisterContainer = () => {
       listen();
     };
   }, []);
+
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const signUp = (e) => {
+
+  const signUp = async (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((useCredential) => {
-        console.log(useCredential);
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        navigate("/sign-in");
       })
       .catch((error) => {
-        console.log(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
       });
   };
   return (
@@ -47,10 +57,11 @@ const RegisterContainer = () => {
       {!authUser ? (
         <div className="auth__container_right register__right">
           <p>
-            Already a member?{" "}
+            Already have an account?{" "}
             <Link to={"/sign-in"} className="auth__container_link">
-              Sign In
+              Sign In{" "}
             </Link>
+            now.
           </p>
           <h2 className="mb36">Create an account</h2> {/* Register */}
           <div className="flex jc-sb gap">
@@ -61,30 +72,16 @@ const RegisterContainer = () => {
               className="auth__container_form"
             >
               <Form.Item
-                name={["user", "name"]}
-                label="Name"
-                className="auth__container_input"
-                autoFocus={true}
-                rules={[
-                  {
-                    required: true,
-                    message: "Name is required!",
-                  },
-                ]}
-              >
-                <Input autoFocus={true} />
-              </Form.Item>
-              <Form.Item
                 label="E-mail"
                 className="auth__container_input"
                 type="email"
+                required={true}
                 rules={[
                   {
                     type: "email",
                     message: "The input is not valid E-mail!",
                   },
                   {
-                    required: true,
                     message: "Please input your E-mail!",
                   },
                 ]}
@@ -98,9 +95,9 @@ const RegisterContainer = () => {
                 label="Password"
                 name="password"
                 className="auth__container_input"
+                required={true}
                 rules={[
                   {
-                    required: true,
                     message: "Please input your password!",
                   },
                 ]}
