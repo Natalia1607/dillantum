@@ -10,8 +10,6 @@ import Error from "../../UI/Error/Error";
 
 import "./propertyListStyles.scss";
 import Banner from "../../Banner/Banner";
-import { fetchAPI } from "../../../utils/fetchApi";
-
 
 const PropertyList = () => {
   const [type, setType] = useState("monthly");

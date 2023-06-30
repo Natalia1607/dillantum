@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../redux/services/firebase";
+
 import { RiMenu3Fill, RiCloseFill, RiUser3Fill } from "react-icons/ri";
 import { MdAdd, MdLogout } from "react-icons/md";
 import { RiUserSharedLine } from "react-icons/ri";
 
+
 const CTA = () => {
+  const navigate = useNavigate();
   const handleNav = () => setNav(!nav);
   const location = useLocation();
   const [nav, setNav] = useState(false);
@@ -16,13 +21,13 @@ const CTA = () => {
     const elements = document.querySelectorAll(".account__panel_opacity");
     elements.forEach((el) => el.classList.toggle("opacity"));
   };
- 
+
   useEffect(() => {
     const elements = document.querySelectorAll(".account__panel_opacity");
     elements.forEach((el) => el.classList.remove("opacity"));
-    if(nav) {
-      setNav(!nav)
-    };
+    if (nav) {
+      setNav(!nav);
+    }
   }, [location]);
 
   useEffect(() => {
@@ -42,7 +47,10 @@ const CTA = () => {
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("sign out successful");
+        localStorage.removeItem("user");
+        localStorage.removeItem("uid");
+        localStorage.removeItem("token");
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };

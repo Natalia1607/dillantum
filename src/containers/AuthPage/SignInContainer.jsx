@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Form, Input } from "antd";
 
 import Key from "../../assets/key.jpg";
+import { motion } from "framer-motion";
 
 import { auth, app } from "../../redux/services/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -12,7 +13,6 @@ import { actionType } from "../../context/reducer";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 
-import { onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 
 import "./authPageStyles.scss";
@@ -22,46 +22,47 @@ const button = {
 };
 
 const SignInContainer = () => {
-  const [authUser, setAuthUser] = useState(null);
-  useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setAuthUser(user);
-      } else {
-        setAuthUser(null);
-      }
-    });
-
-    return () => {
-      listen();
-    };
-  }, []);
-
   const appearance = () => {
     const el = document.querySelector("#form__opacity");
     el.classList.toggle("opacity");
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const signIn = (e) => {
+
+  const signIn = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    setIsLoading(true);
+
+    await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        localStorage.setItem("user", user.email);
+        localStorage.setItem("uid", user.uid);
+        localStorage.setItem("token", user.accessToken);
         console.log(user);
         navigate("/personal_account");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        if (email == "" && password == "") {
+          const errorMessage = "Please input your E-mail and Password!";
+          setErrorMessage(errorMessage);
+        } else if (email == "") {
+          const errorMessage = "Please input your E-mail!";
+          setErrorMessage(errorMessage);
+        } else if (password == "") {
+          const errorMessage = "Please input your Password!";
+          setErrorMessage(errorMessage);
+        } else {
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+        }
       });
+    setIsLoading(false);
   };
-
-  window.localStorage.setItem("name", `${email}`);
-  const name = window.localStorage.getItem("name");
 
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
@@ -77,13 +78,15 @@ const SignInContainer = () => {
     });
   };
 
+  const content = isLoading ? "Logging in..." : "Sign in";
+
   return (
     <div className="auth__container container grid">
       <div className="auth__container_bg md-flex">
         <img src={Key} alt="key" />
       </div>
       <div className="auth__container_right sign__right">
-        <h2 className="mb36">Sign in</h2>
+        <h2 className="mb36">Sign in to Dillantum</h2>
         <button
           className="btn flex ai-c gap_6 mb24"
           style={button}
@@ -107,20 +110,21 @@ const SignInContainer = () => {
           className="auth__container_form form__opacity"
           id="form__opacity"
         >
+          {errorMessage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="error-wrap"
+            >
+              <p className="error-message">{errorMessage}</p>
+            </motion.div>
+          )}
           <Form.Item
             name={["user", "email"]}
-            label="E-mail"
-            className="item__input"
-            rules={[
-              {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!",
-              },
-            ]}
+            label="Email Address"
+            className="auth__container_input item__input"
+            required={true}
           >
             <Input
               autoFocus={true}
@@ -131,13 +135,8 @@ const SignInContainer = () => {
           <Form.Item
             label="Password"
             name="password"
-            className="item__input"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
+            className="auth__container_input item__input"
+            required={true}
           >
             <Input.Password
               value={password}
@@ -149,7 +148,7 @@ const SignInContainer = () => {
             type="submit"
             onClick={signIn}
           >
-            Sign in
+            {content}
           </button>
           <div>
             <Link to="/reset" className="auth__container_link">

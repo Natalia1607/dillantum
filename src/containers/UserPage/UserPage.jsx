@@ -1,20 +1,42 @@
-import React, { useState } from "react";
-import { CTAMain } from "../MainPage/CTAMain";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { CTAMain } from "../MainPage/CTAMain";
+
 import { RiUser3Fill } from "react-icons/ri";
 import { GiArchiveResearch } from "react-icons/gi";
 import { IoIosListBox } from "react-icons/io";
 import {
-  MdFavorite,
+  MdFavorite, 
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight, 
 } from "react-icons/md";
+
+import { auth
+ } from "../../redux/services/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 import "./userPageStyles.scss";
 
 const MainContainer = () => {
   const location = useLocation();
   const [nav, setNav] = useState(false);
+  const [authUser, setAuthUser] = useState(null);
   const handleNav = () => setNav(!nav);
+
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+    
+    return () => {
+      listen();
+    };
+  }, []);
+ 
   return (
     <div className="user container flex">
       <div
@@ -28,8 +50,8 @@ const MainContainer = () => {
           <Link to={"/personal_account"}>
             <RiUser3Fill className="icon user__avatar mb24" />
           </Link>
-          <p className="mb12">Your name</p>
-          <p>ID #1234567890</p>
+          <p className="mb12"> {authUser?.email || "Your name"} </p>
+          <p>ID #{authUser?.uid.length > 10 ? `${authUser?.uid.substring(0, 10)}...` : authUser?.uid}</p>
         </div>
         <ul className="user__nav">
           <li>
@@ -55,7 +77,7 @@ const MainContainer = () => {
             <MdKeyboardArrowRight className="icon" size={30} />
           )}
         </div>
-      </div>
+      </div> 
       <div className="user__content">
         {location.pathname === "/personal_account" ? <CTAMain /> : <></>}
         {location.pathname === "/personal_account/searches" ? (

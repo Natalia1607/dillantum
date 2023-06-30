@@ -2,7 +2,7 @@ import {
   collection,
   doc,
   getDocs,
-  orderBy,
+  orderBy, 
   query,
   setDoc,
 } from "firebase/firestore";

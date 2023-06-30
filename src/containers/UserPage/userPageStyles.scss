@@ -1,4 +1,6 @@
 .user {
+  gap: 24px;
+  
   &__container {
     position: relative;
     flex-direction: column;
@@ -46,7 +48,6 @@
   &__content {
     display: flex;
     flex: 2;
-    align-items: flex-end;
 
     @media screen and (max-width: 600px) {
       flex: 1;

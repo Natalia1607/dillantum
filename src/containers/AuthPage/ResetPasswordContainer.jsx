@@ -34,17 +34,8 @@ const ResetPasswordContainer = () => {
         <Form.Item
           name={["user", "email"]}
           label="E-mail"
-          className="item__input"
-          rules={[
-            {
-              type: "email",
-              message: "The input is not valid E-mail!",
-            },
-            {
-              required: true,
-              message: "Please input your E-mail!",
-            },
-          ]}
+          className="auth__container_input item__input"
+          required={true}
         >
           <Input
             autoFocus={true}
@@ -55,13 +46,8 @@ const ResetPasswordContainer = () => {
         <Form.Item
           label="New password"
           name="password"
-          className="item__input"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-          ]}
+          className="auth__container_input item__input"
+          required={true}
         >
           <Input.Password/>
         </Form.Item>
